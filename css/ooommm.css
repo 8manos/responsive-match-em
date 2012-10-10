@@ -1,1 +1,7 @@
 /* Estilos de OOOMMM */
+body{
+	background-image: url(../img/img_fondo03.jpg);
+	background-position: left top;
+	background-repeat: no-repeat;
+	background-size: cover;
+}

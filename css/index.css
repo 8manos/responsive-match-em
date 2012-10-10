@@ -1,8 +1,8 @@
 html, body{margin:0; height:100%;}
-body{background:url(../img/s.png)#fff8f0; font:16px sovba-1,sovba-2,sans-serif;}
+body{background:url(../img/img_fondo03.jpg)#fff8f0; background-repeat: no-repeat;  font:16px sovba-1,sovba-2,sans-serif;}
 
 h1, h2{margin:0; padding:12px 0; line-height: 40px; font-weight:bold; }
-h1{color:#B1CC6D; font-size:28px; text-shadow:-2px 1px 0 #212B40;}
+h1{color:#9DBBB5; font-size:28px; text-shadow:-2px 1px 0 #000;}
 h2{color:#547B97; font-size:24px;}
 
 #l{overflow: hidden; position: relative; white-space: nowrap;}
