@@ -11,7 +11,7 @@ body{
 header{
 	float: left;
 	width: 300px;
-	margin: 10px 0px 50px;
+	margin: 10px 0px 0px 50px;
 }
 
 h1{
