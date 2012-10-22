@@ -8,6 +8,17 @@ body{
 	background-size: cover;
 }
 
+div {
+	width: 90px;
+}
+
+.done div ,
+.used div {
+	-webkit-background-size: contain;
+	-moz-background-size: contain;
+	background-size: contain;
+}
+
 header{
 	float: left;
 	width: 300px;

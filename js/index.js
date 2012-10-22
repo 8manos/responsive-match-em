@@ -94,12 +94,69 @@ function getPics()
 
 function feedLoaded(result)
 {
-	pics = [];
+	pics = [
+		"img/ooommm/aisha_bamboo.png",
+		"img/ooommm/aisha_cobra.png",
+		"img/ooommm/aisha_diamante.png",
+		"img/ooommm/aisha_elefante.png",
+		"img/ooommm/aisha_elefantesentado.png",
+		"img/ooommm/aisha_estrella.png",
+		"img/ooommm/aisha_lunacreciente.png",
+		"img/ooommm/aisha_montana.png",
+		"img/ooommm/aisha_oruga.png",
+		"img/ooommm/aisha_perro.png",
+		"img/ooommm/aisha_pinza.png",
+		"img/ooommm/aisha_tabla.png",
+		"img/ooommm/aisha_triangulo.png",
+		"img/ooommm/dhani_camello.png",
+		"img/ooommm/dhani_cobra.png",
+		"img/ooommm/dhani_corazon.png",
+		"img/ooommm/dhani_estrellademar.png",
+		"img/ooommm/dhani_meditaciondelaguita.png",
+		"img/ooommm/dhani_montanaconjunta.png",
+		"img/ooommm/dhani_namaste.png",
+		"img/ooommm/dhani_pez.png",
+		"img/ooommm/dhani_rana.png",
+		"img/ooommm/dhani_ranitas.png",
+		"img/ooommm/dhani_revolviendolaleche.png",
+		"img/ooommm/dhani_sanduche.png",
+		"img/ooommm/pepe_anaconda.png",
+		"img/ooommm/pepe_caiman.png",
+		"img/ooommm/pepe_gatoenbalance.png",
+		"img/ooommm/pepe_gatoenojado.png",
+		"img/ooommm/pepe_gatofeliz.png",
+		"img/ooommm/pepe_gatoneutro.png",
+		"img/ooommm/pepe_jaguar.png",
+		"img/ooommm/pepe_marioneta.png",
+		"img/ooommm/pepe_monoguerrero.png",
+		"img/ooommm/pepe_montana.png",
+		"img/ooommm/pepe_mudra.png",
+		"img/ooommm/pepe_namaste.png",
+		"img/ooommm/pepe_perro.png",
+		"img/ooommm/pepe_perroorinando.png",
+		"img/ooommm/pepe_ranaacostada.png",
+		"img/ooommm/pepe_torofuerte.png",
+		"img/ooommm/willi_camello.png",
+		"img/ooommm/willi_caradevaca.png",
+		"img/ooommm/willi_diamante.png",
+		"img/ooommm/willi_escarabajo.png",
+		"img/ooommm/willi_huevocosmico.png",
+		"img/ooommm/willi_libro.png",
+		"img/ooommm/willi_mariposaw.png",
+		"img/ooommm/willi_mariposamonarca.png",
+		"img/ooommm/willi_namaste.png",
+		"img/ooommm/willi_telefono.png"
+	];
+	pics.sort( randOrd );
+	/*
 	var thumb;
 	$.each(result.feed.entries, function(i, entry){
 		thumb = entry.mediaGroups[0].contents[0].thumbnails[1].url;
 		pics.push(thumb);
 	});
+	*/
+
+	// console.log(pics);
 	
 	var preload_imgs = [];
 	$.each(pics, function(i, url){
@@ -302,7 +359,7 @@ function flip($card, pic_id)
 
 function animateMatch($cards)
 {
-	$cards.children().delay(400).animate({width:'150px', height:'150px'}, 150).animate({width:'128px', height:'128px'}, 150);
+	$cards.children().delay(400).animate({width:'110px', height:'150px'}, 150).animate({width:'90px', height:'128px'}, 150);
 }
 
 function cardsMatch($used_cards, pic_id)
