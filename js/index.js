@@ -199,7 +199,7 @@ function randOrd()
 function setUp()
 {
 	$('button').live('click', function(){
-		$('#s').html('Time: <span>00:00</span>');
+		$('#s').html('Tiempo: <span>00:00</span>');
 		running = true;
 		seconds = 0;
 		timer();
@@ -248,7 +248,7 @@ function finishResize()
 
 function confirmChangeLevel()
 {
-	var new_game = confirm('Your window size has been reduced. Would you like to start a new game with fewer cards?');
+	var new_game = confirm('Tu pantalla ahora es mas pequeña, quieres intentar con menos cartas?');
 	if (new_game == true){
 		newGame('auto');
 	}
@@ -391,7 +391,7 @@ function resetStart()
 	running = false;
 	clearTimeout(t);
 
-	$('#s').html('<button>Start</button>');
+	$('#s').html('<button>Iniciar</button>');
 	
 	$("article:not(.done, .used)").die('click', clickCard);
 }
