@@ -57,7 +57,7 @@ div{
 
 @media screen and (-webkit-min-device-pixel-ratio:0){
 	div{-webkit-transition:-webkit-transform 0.2s ease-out;}
-	.flipped{width:128px; -webkit-transition:-webkit-transform 0.2s ease-in; -webkit-transform:rotateY(90deg);}
+	.flipped{width:80px; -webkit-transition:-webkit-transform 0.2s ease-in; -webkit-transform:rotateY(90deg);}
 }
 
 @media (max-aspect-ratio:1/1){
