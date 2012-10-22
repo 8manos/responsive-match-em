@@ -9,14 +9,12 @@ body{
 }
 
 div {
-	width: 90px;
-}
-
-.done div ,
-.used div {
 	-webkit-background-size: contain;
 	-moz-background-size: contain;
 	background-size: contain;
+	background-image: url(../img/willi_reverso.png);
+	border: none;
+	width: 90px;
 }
 
 header{
@@ -31,4 +29,13 @@ h1{
 
 #l:before{
 	background: transparent;
+}
+
+.done {
+	opacity:1;
+}
+
+.done div {
+	-webkit-box-shadow:0 0px 6px -2px rgba(255,255,255,0.6);
+	box-shadow:0 0px 6px 4px rgba(255,255,255,0.6);
 }
