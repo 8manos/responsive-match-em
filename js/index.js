@@ -46,7 +46,7 @@ function setSelectedLevel(num)
 {
 	$('#l option').prop('selected', false);
 	$('#l option').eq(num-2).prop('selected', true);
-
+	$('body').removeClass().addClass('level-'+num);
 }
 
 function setAvailLevels()

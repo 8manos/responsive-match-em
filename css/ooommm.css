@@ -57,6 +57,39 @@ div {
 	width: 90px;
 }
 
+.level-2 div {
+    background-image: url(../img/willi_reverso.png);
+}
+
+.level-3 div {
+    background-image: url(../img/flora_reverso.png);
+}
+
+.level-4 div {
+    background-image: url(../img/aisha_reverso.png);
+}
+
+.level-5 div {
+    background-image: url(../img/vazul_reverso.png);
+}
+
+.level-6 div {
+    background-image: url(../img/vmorado_reverso.png);
+}
+
+.level-7 div {
+    background-image: url(../img/willi_reverso.png);
+}
+
+.level-8 div {
+    background-image: url(../img/flora_reverso.png);
+}
+
+.level-9 div {
+    background-image: url(../img/aisha_reverso.png);
+}
+
+
 header{
 	float: left;
 	width: 300px;
