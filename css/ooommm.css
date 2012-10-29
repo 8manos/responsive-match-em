@@ -115,6 +115,33 @@ select , select:hover {
     color:#fff;
 }
 
+#win {
+    background-color: transparent;
+    background-image: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #fff;
+    display: none;
+    font-family: 'airstream_itcregular';
+    font-size: 5em;
+    left:0;
+    position:fixed;
+    text-align: center;
+    text-shadow: 0 0 6px #000;
+    top:0%;
+    width: 100%;
+}
+
+#win h3 ,
+#win h4 {
+    margin: 0;
+    padding: 0;
+}
+
+#win h4 {
+    font-size: 0.7em;
+}
+
 .done {
 	opacity:1;
 }

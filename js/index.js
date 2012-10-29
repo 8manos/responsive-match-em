@@ -308,7 +308,7 @@ function resetBoard()
 {
 	$('#r, div').css('background', '');
 	$('article').removeClass('done used hold');
-	$('div').css('width', '').css('height', '').fadeIn();
+	$('div:not(#win)').css('width', '').css('height', '').fadeIn();
 	
 	done = [];
 	setCardsArray();
@@ -374,6 +374,7 @@ function checkFinish()
 {
 	if (done.length == entries){
 		$('div').fadeOut();
+		$('#win').fadeIn().delay(1888).fadeOut();
 				
 		if (best[num-2] == 0 || best[num-2] >= seconds){
 			best[num-2] = seconds-1;
