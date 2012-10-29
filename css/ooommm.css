@@ -45,6 +45,7 @@ body{
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
+    font-family: 'skiaregular';
 }
 
 div {
@@ -64,10 +65,54 @@ header{
 
 h1{
 	color: #00BB96;
+    font-family: 'airstream_itcregular';
+    text-align: center;
+}
+
+select , select:hover {
+    color:#fff;
 }
 
 #l:before{
 	background: transparent;
+}
+
+#s button {
+    -webkit-box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    display: block;
+    font-family: 'airstream_itcregular';
+    font-size: 1.2em;
+    line-height: 57px;
+    text-align: left;
+    width: 165px;
+}
+
+#s button:before {
+    background: transparent url("../img/ooommm-sprite.png") no-repeat -36px -273px;
+    content: " ";
+    display: inline-block;
+    float:left;
+    height: 52px;
+    margin-right: 20px;
+    vertical-align: middle;
+    width: 52px;
+}
+
+#s button:hover:before {
+    background-position:-121px -273px;
+}
+
+#s button:active:before {
+    background-position:-209px -273px;
+}
+
+#b span ,
+#s span {
+    color:#fff;
 }
 
 .done {
