@@ -102,11 +102,7 @@ h1{
     text-align: center;
 }
 
-select {
-	color: #00BB96;
-}
-
-select:hover {
+select ,select:hover {
     color:#fff;
 }
 

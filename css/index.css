@@ -27,7 +27,7 @@ button{
 	background-color:#7fbf4d; background-image:-webkit-linear-gradient(top, #7fbf4d, #63a62f); background-image:-moz-linear-gradient(top, #7fbf4d, #63a62f); background-image:-ms-linear-gradient(top, #7fbf4d, #63a62f);
 	border: 1px solid #63a62f; border-bottom: 1px solid #5b992b; border-radius: 6px;
 	-webkit-box-shadow:inset 0 1px 0 0 #96ca6d; box-shadow:inset 0 1px 0 0 #96ca6d;
-	color: #fff; font:18px/12px sovba-1,sovba-2,sans-serif; letter-spacing: 2px;
+	color: #00BB96; font:18px/12px sovba-1,sovba-2,sans-serif; letter-spacing: 2px;
 	width: 128px; padding: 6px 0; text-align: center; text-shadow: 0 -1px 0 #4c9021; cursor: pointer;
 }
 button:hover{
