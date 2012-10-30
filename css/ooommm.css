@@ -125,7 +125,8 @@ select:hover {
     font-size: 1em;
     line-height: 57px;
     text-align: left;
-    width: 265px;
+    width: 165px;
+    margin: 0px 0px 0px 60px;
 }
 
 #s button:before {
