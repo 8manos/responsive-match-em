@@ -1,4 +1,3 @@
-google.load("feeds", "1");
 var width, height, maxwidth, maxheight, space, num, entries, seconds, t, resizeTimer, cardwidth, cardheight;
 var running = false;
 var best = [0,0,0,0,0,0,0,0];
@@ -87,13 +86,6 @@ function getPics()
 {
 	entries = Math.floor(num*num/2);
 
-	var feed = new google.feeds.Feed('http://backend.deviantart.com/rss.xml?q=boost:popular+in:photography');
-	feed.setNumEntries(entries);
-	feed.load(feedLoaded);
-}
-
-function feedLoaded(result)
-{
 	pics = [
 		"img/ooommm/aisha_bamboo.png",
 		"img/ooommm/aisha_cobra.png",
@@ -148,15 +140,6 @@ function feedLoaded(result)
 		"img/ooommm/willi_telefono.png"
 	];
 	pics.sort( randOrd );
-	/*
-	var thumb;
-	$.each(result.feed.entries, function(i, entry){
-		thumb = entry.mediaGroups[0].contents[0].thumbnails[1].url;
-		pics.push(thumb);
-	});
-	*/
-
-	// console.log(pics);
 
 	var preload_imgs = [];
 	$.each(pics, function(i, url){
