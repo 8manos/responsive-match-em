@@ -118,10 +118,10 @@ select , select:hover {
     box-shadow: none;
     display: block;
     font-family: 'airstream_itcregular';
-    font-size: 1.2em;
+    font-size: 1em;
     line-height: 57px;
     text-align: left;
-    width: 165px;
+    width: 265px;
 }
 
 #s button:before {
@@ -136,7 +136,7 @@ select , select:hover {
 }
 
 #s button:hover:before {
-    background-position:-121px -273px;
+    background-position:-122px -273px;
 }
 
 #s button:active:before {
