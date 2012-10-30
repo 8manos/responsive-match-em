@@ -23,7 +23,7 @@ option:selected{font-weight:bold; color:#547B97;}
 option:hover{color:#547B97; background:#ce8;}
 option:disabled{color:#547B97; background:#999;}
 
-button{	
+button{
 	background-color:#7fbf4d; background-image:-webkit-linear-gradient(top, #7fbf4d, #63a62f); background-image:-moz-linear-gradient(top, #7fbf4d, #63a62f); background-image:-ms-linear-gradient(top, #7fbf4d, #63a62f);
 	border: 1px solid #63a62f; border-bottom: 1px solid #5b992b; border-radius: 6px;
 	-webkit-box-shadow:inset 0 1px 0 0 #96ca6d; box-shadow:inset 0 1px 0 0 #96ca6d;
@@ -45,9 +45,9 @@ article{width:160px; height:160px; float:left; position:relative;}
 .done{opacity:0.33; -moz-transition:opacity 0.4s ease-in-out; -webkit-transition:opacity 0.4s ease-in-out; -ms-transition:opacity 0.4s ease-in-out;}
 
 div{
-	width:128px; height:128px; margin:auto; border:8px solid #212B40; position:absolute; top:0; bottom:0; left:0; right:0;
+	margin:auto; border:8px solid #212B40; position:absolute; top:0; bottom:0; left:0; right:0;
 	background:url(../img/f.png) center center repeat #000; border-radius:8px; -webkit-box-shadow:0 8px 6px -2px #000; box-shadow:0 8px 6px -2px #000;
-	-moz-transition:width 0.2s ease-out; -webkit-transition:width 0.2s ease-out; -ms-transition:width 0.2s ease-out; cursor:pointer;	
+	-moz-transition:width 0.2s ease-out; -webkit-transition:width 0.2s ease-out; -ms-transition:width 0.2s ease-out; cursor:pointer;
 }
 .done div, .used div, .hold div{cursor:default;}
 .flipped{
@@ -55,20 +55,20 @@ div{
 	-moz-transition:width 0.2s ease-in; -webkit-transition:width 0.2s ease-in; -ms-transition:width 0.2s ease-in;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0){
+/*@media screen and (-webkit-min-device-pixel-ratio:0){
 	div{-webkit-transition:-webkit-transform 0.2s ease-out;}
 	.flipped{width:80px; -webkit-transition:-webkit-transform 0.2s ease-in; -webkit-transform:rotateY(90deg);}
-}
+}*/
 
 @media (max-aspect-ratio:1/1){
 	h1, h2{float:left; padding:12px 1%; width:31%;}
 	h1{line-height:48px;}
 	h2{line-height:36px;}
-	
+
 	#l{width: 142px;}
 	#l:before{left:79px; top:19px;}
 	#l:after{left:133px; top:26px;}
-	
+
 	#r{clear: both;}
 }
 @media (min-aspect-ratio:1/1){
@@ -76,16 +76,16 @@ div{
 	h1, h2{ border-bottom:1px solid #212B40;}
 
 	#b{display: none;}
-	
+
 	#r{height:100% !important;}
 }
 @media (max-width:479px){
 	h1, h2{padding-top:8px; padding-bottom:8px;}
 	h1{line-height:32px; font-size:18px;}
 	h2{line-height:24px; font-size:16px;}
-	
+
 	button{padding:4px; width:96px; margin:0; font-size:16px; line-height:10px;}
-	
+
 	#l:before{left:54px; top:8px; height:18px; width:64px;}
 	#l:after{left:96px; top:13px;}
 	select{font-weight:normal; font-size:16px; line-height:12px; width: 64px;}
