@@ -101,7 +101,11 @@ h1{
     text-align: center;
 }
 
-select , select:hover {
+select {
+	color: #00BB96;
+}
+
+select:hover {
     color:#fff;
 }
 
@@ -117,10 +121,11 @@ select , select:hover {
     box-shadow: none;
     display: block;
     font-family: 'airstream_itcregular';
-    font-size: 1.2em;
+    font-size: 1em;
     line-height: 57px;
     text-align: left;
     width: 165px;
+    margin: 0px 0px 0px 60px;
 }
 
 #s button:before {
@@ -135,7 +140,7 @@ select , select:hover {
 }
 
 #s button:hover:before {
-    background-position:-121px -273px;
+    background-position:-123px -273px;
 }
 
 #s button:active:before {
