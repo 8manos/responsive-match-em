@@ -1,45 +1,44 @@
-google.load("feeds", "1");
-var width, height, maxwidth, maxheight, space, num, entries, seconds, t, resizeTimer;
+var width, height, maxwidth, maxheight, space, num, entries, seconds, t, resizeTimer, cardwidth, cardheight;
 var running = false;
 var best = [0,0,0,0,0,0,0,0];
 var pics = [];
 var cards = [];
 var done = [];
 
-$(function(){	
+$(function(){
 	getElNum();
-	
+
 	setAvailLevels();
-	
+
 	cloneCards();
 	getPics();
-	
+
 	fixLayout();
-	
+
 	setUp();
 });
 
 function getElNum()
 {
 	getSpace();
-	
+
 	num = Math.floor(space / 160);
 	if (num == 1){
 		num = 2;
 	}
-	
+
 	setSelectedLevel(num);
 }
 
 function getSpace()
-{		
+{
 	width = window.innerWidth;
 	height = window.innerHeight;
-	
+
 	var max = Math.max(width, height);
 	var min = Math.min(width, height);
-	
-	space = Math.min(max - 160, min);	
+
+	space = Math.min(max - 160, min);
 }
 
 function setSelectedLevel(num)
@@ -53,22 +52,22 @@ function setAvailLevels()
 {
 	var screen_width = screen.availWidth;
 	var screen_height = screen.availHeight;
-	
+
 	var scrollbar = 24;
 	var toolbar = window.outerHeight - height;
-	
+
 	max_width = screen_width - scrollbar;
 	max_height = screen_height - toolbar;
-	
+
 	var max_space = Math.max(max_width, max_height);
 	var min_space = Math.min(max_width, max_height);
-	
+
 	var avail_space = Math.min(max_space - 160, min_space);
-	
+
 	var max_rows = Math.floor(avail_space / 160);
-	
+
 	var max_level = Math.max(num, max_rows);
-	
+
 	$('#l option').slice(max_level-1).prop('disabled', true);
 }
 
@@ -84,16 +83,9 @@ function cloneCards()
 }
 
 function getPics()
-{	
-	entries = Math.floor(num*num/2);
-	
-	var feed = new google.feeds.Feed('http://backend.deviantart.com/rss.xml?q=boost:popular+in:photography');
-	feed.setNumEntries(entries);
-	feed.load(feedLoaded);
-}
-
-function feedLoaded(result)
 {
+	entries = Math.floor(num*num/2);
+
 	pics = [
 		"img/ooommm/aisha_bamboo.png",
 		"img/ooommm/aisha_cobra.png",
@@ -148,16 +140,7 @@ function feedLoaded(result)
 		"img/ooommm/willi_telefono.png"
 	];
 	pics.sort( randOrd );
-	/*
-	var thumb;
-	$.each(result.feed.entries, function(i, entry){
-		thumb = entry.mediaGroups[0].contents[0].thumbnails[1].url;
-		pics.push(thumb);
-	});
-	*/
 
-	// console.log(pics);
-	
 	var preload_imgs = [];
 	$.each(pics, function(i, url){
 		preload_imgs[i] = new Image();
@@ -168,8 +151,18 @@ function feedLoaded(result)
 function fixLayout()
 {
 	$('#r').height(space).css('min-width', num*150+'px').css('min-height', num*150+'px');
-	
+
 	$('article').width(100/num+'%').height(100/num+'%');
+
+	var max_card_width = $('article').width() - 30;
+	var max_card_height = $('article').height() - 30;
+
+	var multip = Math.floor( Math.min((max_card_width / 17), (max_card_height / 24), 10) );
+
+	cardwidth = multip*17;
+	cardheight = multip*24;
+
+	$('div:not(#win)').width(cardwidth).height(cardheight);
 }
 
 function setCardsArray()
@@ -194,7 +187,7 @@ function setCardsArray()
 function randOrd()
 {
 	return (Math.round(Math.random())-0.5);
-} 
+}
 
 function setUp()
 {
@@ -203,20 +196,20 @@ function setUp()
 		running = true;
 		seconds = 0;
 		timer();
-		
+
 		resetBoard();
-		
-		$('article:not(.done, .used)').live('click', clickCard);		
+
+		$('article:not(.done, .used)').live('click', clickCard);
 	});
-	
+
 	$(window).resize(function(e) {
 		//si el resize fue generado por el programa, actualiza width, height y space
 		getSpace();
-		
+
 		clearTimeout(resizeTimer);
-		resizeTimer = setTimeout(finishResize, 999);    
+		resizeTimer = setTimeout(finishResize, 999);
 	});
-	
+
 	$('#l select').live('change', function(){
 		var rows = $(this).children('option:selected').index()+2;
 		newGame(rows);
@@ -227,12 +220,12 @@ function finishResize()
 {
 	var new_width = window.innerWidth;
 	var new_height = window.innerHeight;
-	
+
 	var new_max = Math.max(new_width, new_height);
 	var new_min = Math.min(new_width, new_height);
-	
+
 	var new_space = Math.min(new_max - 160, new_min);
-	
+
 	if (new_space > 0){
 		if (running){
 			if (new_space < num*150){
@@ -263,16 +256,16 @@ function newGame(rows)
 		num = rows;
 		setSelectedLevel(num);
 	}
-	
+
 	deleteCards();
 	cloneCards();
 	getPics();
-	
+
 	fixLayout();
-	
+
 	resetStart();
 	setBest();
-	
+
 	if (rows != 'auto'){
 		//cambiamos el tamaño de la ventana si se deja
 		var new_width = (max_width > max_height)? 160*(rows+1) : 160*rows;
@@ -295,12 +288,12 @@ function timer()
 
 	var minutes = Math.floor(seconds/60);
 	var secs = seconds%60;
-	
+
 	minutes = ( minutes < 10 ? "0" : "" ) + minutes;
 	secs = ( secs < 10 ? "0" : "" ) + secs;
-	
+
 	$('#s span').text(minutes+':'+secs);
-	
+
 	seconds = seconds+1;
 }
 
@@ -308,8 +301,8 @@ function resetBoard()
 {
 	$('#r, div').css('background', '');
 	$('article').removeClass('done used hold');
-	$('div:not(#win)').css('width', '').css('height', '').fadeIn();
-	
+	$('div:not(#win)').width(cardwidth).height(cardheight).fadeIn();
+
 	done = [];
 	setCardsArray();
 }
@@ -317,17 +310,17 @@ function resetBoard()
 function clickCard()
 {
 	var $used_cards = $(this).siblings('.used');
-	
-	if ($used_cards.length < 2){		
+
+	if ($used_cards.length < 2){
 		//destapamos la carta
 		var index = $(this).index();
 		var pic_id = cards[index];
 		flip($(this), pic_id);
-		
+
 		//si ya había otra destapada
 		if ($used_cards.length == 1){
 			var used_index = $used_cards.index();
-			
+
 			$.merge($used_cards, $(this));
 			$('article').not($used_cards).addClass('hold');
 
@@ -350,16 +343,16 @@ function clickCard()
 function flip($card, pic_id)
 {
 	$card.addClass('used');
-	$card.children().addClass('flipped');
-		
+	$card.children().addClass('flipped').width(0);
+
 	setTimeout(function(){
-		$card.children().css('backgroundImage', 'url('+pics[pic_id]+')').css('backgroundRepeat', 'no-repeat').removeClass('flipped');
+		$card.children().css('backgroundImage', 'url('+pics[pic_id]+')').css('backgroundRepeat', 'no-repeat').removeClass('flipped').width(cardwidth);
 	}, 200);
 }
 
 function animateMatch($cards)
 {
-	$cards.children().delay(400).animate({width:'110px', height:'150px'}, 150).animate({width:'90px', height:'128px'}, 150);
+	$cards.children().delay(400).animate({width: cardwidth+20, height: cardheight+20}, 200).animate({width: cardwidth, height: cardheight}, 200);
 }
 
 function cardsMatch($used_cards, pic_id)
@@ -367,7 +360,7 @@ function cardsMatch($used_cards, pic_id)
 	$used_cards.removeClass('used').addClass('done');
 	$('article').removeClass('hold');
 	done.push(pic_id);
-	checkFinish();	
+	checkFinish();
 }
 
 function checkFinish()
@@ -375,14 +368,14 @@ function checkFinish()
 	if (done.length == entries){
 		$('div').fadeOut();
 		$('#win').fadeIn().delay(1888).fadeOut();
-				
+
 		if (best[num-2] == 0 || best[num-2] >= seconds){
 			best[num-2] = seconds-1;
 			$('#b span').remove();
 			$('#s span').clone().appendTo($('#b'));
-			$('#b').slideDown();	
+			$('#b').slideDown();
 		}
-		
+
 		resetStart();
 	}
 }
@@ -393,7 +386,7 @@ function resetStart()
 	clearTimeout(t);
 
 	$('#s').html('<button>Iniciar</button>');
-	
+
 	$("article:not(.done, .used)").die('click', clickCard);
 }
 
@@ -402,14 +395,14 @@ function setBest()
 	var level_best = best[num-2];
 	if (level_best == 0){
 		$('#b span').text('');
-	}else{		
+	}else{
 		var minutes = Math.floor(level_best/60);
 		var secs = level_best%60;
-		
+
 		minutes = ( minutes < 10 ? "0" : "" ) + minutes;
 		secs = ( secs < 10 ? "0" : "" ) + secs;
-		
-		$('#b span').text(minutes+':'+secs);		
+
+		$('#b span').text(minutes+':'+secs);
 	}
 }
 
