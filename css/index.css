@@ -5,15 +5,7 @@ h1, h2{margin:0; padding:12px 0; line-height: 40px; font-weight:bold; }
 h1{color:#9DBBB5; font-size:29px; text-shadow:0.5px 0.5px 0.5px #000014;}
 h2{color:#547B97; font-size:24px;}
 
-#l{
-	overflow: hidden; 
-	position: relative; 
-	white-space: nowrap; 
-	margin: 0px 0px 0px 90px;
-	font-family: 'airstream_itcregular';
-	color: #00BB96;
-	letter-spacing: 2px;
-}
+#l{overflow: hidden; position: relative; white-space: nowrap; margin: 0px 0px 0px 90px;font-family: 'airstream_itcregular'; color: #00BB96; letter-spacing: 2px;}
 #l:before{content:""; background:#B1CC6D; height:25px; width:77px; position:absolute; left:73px; top:21px; z-index:-2;}
 #l:after{
 	content:""; border-color:#212B40 #B1CC6D; border-style:solid; border-width:10px 8px 0; height:0; width:0;
