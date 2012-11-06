@@ -96,8 +96,9 @@ header{
 }
 
 h1{
-	color: #00BB96;
+	color: #FFF;
     font-family: 'airstream_itcregular';
+    letter-spacing: 2px;
     text-align: center;
 }
 
