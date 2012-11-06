@@ -13,7 +13,7 @@ h2{color:#547B97; font-size:24px;}
 }
 select{
 	font:bold 18px sovba-1,sovba-2,sans-serif; color:#212B40;
-	background:transparent; width:83px; border:none; -webkit-appearance:none;
+	background:transparent; width:70.6px; border:none; -webkit-appearance:none;
 	position: relative; top: -2px; margin-left:4px;
 }
 select:hover{color:#547B97;}
