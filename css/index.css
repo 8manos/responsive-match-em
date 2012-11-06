@@ -9,9 +9,10 @@ h2{color:#547B97; font-size:24px;}
 	overflow: hidden; 
 	position: relative; 
 	white-space: nowrap; 
-	margin: 0px 0px 0px 60px;
+	margin: 0px 0px 0px 90px;
 	font-family: 'airstream_itcregular';
 	color: #00BB96;
+	letter-spacing: 2px;
 }
 #l:before{content:""; background:#B1CC6D; height:25px; width:77px; position:absolute; left:73px; top:21px; z-index:-2;}
 #l:after{
@@ -20,7 +21,7 @@ h2{color:#547B97; font-size:24px;}
 }
 select{
 	font:bold 18px sovba-1,sovba-2,sans-serif; color:#212B40;
-	background:transparent; width:96px; border:none; -webkit-appearance:none;
+	background:transparent; width:83px; border:none; -webkit-appearance:none;
 	position: relative; top: -2px; margin-left:4px;
 }
 select:hover{color:#547B97;}
