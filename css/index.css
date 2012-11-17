@@ -11,13 +11,13 @@ h2{color:#547B97; font-size:24px;}
 	white-space: nowrap; 
 	margin: 0px 0px 0px 90px;
 	font-family: 'airstream_itcregular'; 
-	color: #004D3D; 
+	color: #00614E; 
 	letter-spacing: 2px;
 }
 
 #l:before{
 	content:""; 
-	background:#B1CC6D; 
+	background:#00BB96; 
 	height:25px; 
 	width:77px; 
 	position:absolute; 
@@ -28,7 +28,7 @@ h2{color:#547B97; font-size:24px;}
 
 #l:after{
 	content:""; 
-	border-color:#212B40 #B1CC6D; 
+	border-color:#00BB96 #00BB96; 
 	border-style:solid; 
 	border-width:10px 8px 0; 
 	height:0; 
@@ -43,7 +43,7 @@ select{
 	font-family: 'skiaregular';
 	font:bold 18px sovba-1,sovba-2,sans-serif; 
 	color:#00614E;
-	background:transparent; 
+	background:#00BB96; 
 	width:70.6px; 
 	border:none; -webkit-appearance:none;
 	position: relative; 
@@ -54,18 +54,18 @@ select{
 select:hover{color:#00614E;}
 select:focus{outline:none;}
 option{
-	border-bottom:1px solid #001A14; 
+	border-bottom:1px solid #00BB96; 
 	background:none; 
 	font-weight:normal; 
 	font-size:16px; 
-	color:#000;
+	color:#00614E;
 }
-option:selected{font-weight:bold; color:#00614E;}
+option:selected{font-weight:bold; color:#00614E;background:#00BB96;}
 option:hover{color:#00614E; background:#00BB96;}
 option:disabled{color:#00614E; background:#00BB96;}
 
 button{
-	background-color:#7fbf4d; 
+	background-color:#00BB96; 
 	background-image:-webkit-linear-gradient(top, #7fbf4d, #63a62f); 
 	background-image:-moz-linear-gradient(top, #7fbf4d, #63a62f); 
 	background-image:-ms-linear-gradient(top, #7fbf4d, #63a62f);
@@ -84,7 +84,7 @@ button{
 	cursor: pointer;
 }
 button:hover{
-    background-color:#76b347; 
+    background-color:#background:#00BB96;; 
     background-image:-webkit-linear-gradient(top, #76b347, #5e9e2e); 
     background-image:-moz-linear-gradient(top, #76b347, #5e9e2e); 
     background-image:-ms-linear-gradient(top, #76b347, #5e9e2e);
