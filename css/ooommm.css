@@ -39,7 +39,7 @@
 }
 
 body{
-	background-image: url(../img/img_fondo08.png);
+	background-image: url(../img/img_fondo.png);
 	background-position: left top;
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
@@ -96,7 +96,7 @@ header{
 }
 
 h1{
-	color: #FFF;
+	color: #00362B;
     font-family: 'airstream_itcregular';
     letter-spacing: 2px;
     text-align: center;

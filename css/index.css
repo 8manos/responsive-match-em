@@ -24,19 +24,39 @@ option:hover{color:#547B97; background:#ce8;}
 option:disabled{color:#547B97; background:#999;}
 
 button{
-	background-color:#7fbf4d; background-image:-webkit-linear-gradient(top, #7fbf4d, #63a62f); background-image:-moz-linear-gradient(top, #7fbf4d, #63a62f); background-image:-ms-linear-gradient(top, #7fbf4d, #63a62f);
-	border: 1px solid #63a62f; border-bottom: 1px solid #5b992b; border-radius: 6px;
-	-webkit-box-shadow:inset 0 1px 0 0 #96ca6d; box-shadow:inset 0 1px 0 0 #96ca6d;
-	color: #00BB96; font:18px/12px sovba-1,sovba-2,sans-serif; letter-spacing: 2px;
-	width: 128px; padding: 6px 0; text-align: center; text-shadow: 0 -1px 0 #4c9021; cursor: pointer;
+	background-color:#7fbf4d; 
+	background-image:-webkit-linear-gradient(top, #7fbf4d, #63a62f); 
+	background-image:-moz-linear-gradient(top, #7fbf4d, #63a62f); 
+	background-image:-ms-linear-gradient(top, #7fbf4d, #63a62f);
+	border: 1px solid #63a62f; 
+	border-bottom: 1px solid #5b992b; 
+	border-radius: 6px;
+	-webkit-box-shadow:inset 0 1px 0 0 #96ca6d; 
+	box-shadow:inset 0 1px 0 0 #96ca6d;
+	color: #00614E; 
+	font:18px/12px sovba-1,sovba-2,sans-serif; 
+	letter-spacing: 2px;
+	width: 128px; 
+	padding: 6px 0; 
+	text-align: center; 
+	text-shadow: 0 -1px 0 #4c9021; 
+	cursor: pointer;
 }
 button:hover{
-    background-color:#76b347; background-image:-webkit-linear-gradient(top, #76b347, #5e9e2e); background-image:-moz-linear-gradient(top, #76b347, #5e9e2e); background-image:-ms-linear-gradient(top, #76b347, #5e9e2e);
-    -webkit-box-shadow:inset 0 1px 0 0 #8dbf67; box-shadow:inset 0 1px 0 0 #8dbf67;
+    background-color:#76b347; 
+    background-image:-webkit-linear-gradient(top, #76b347, #5e9e2e); 
+    background-image:-moz-linear-gradient(top, #76b347, #5e9e2e); 
+    background-image:-ms-linear-gradient(top, #76b347, #5e9e2e);
+    -webkit-box-shadow:inset 0 1px 0 0 #8dbf67; 
+    box-shadow:inset 0 1px 0 0 #8dbf67;
+    color: #008066;
 }
 button:active{
-    border: 1px solid #5b992b; border-bottom: 1px solid #538c27;
-    -webkit-box-shadow:inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee; box-shadow:inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
+    border: 1px solid #5b992b; 
+    border-bottom: 1px solid #538c27;
+    -webkit-box-shadow:inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee; 
+    box-shadow:inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
+    color: #008066;
 }
 
 #r{overflow:hidden; margin: 0 auto;}
