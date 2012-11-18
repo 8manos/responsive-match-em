@@ -28,7 +28,7 @@ h2{color:#547B97; font-size:24px;}
 
 #l:after{
 	content:""; 
-	border-color:#00BB96 #00BB96; 
+	border-color:#00362B #004D3D; 
 	border-style:solid; 
 	border-width:10px 8px 0; 
 	height:0; 
@@ -54,14 +54,14 @@ select{
 select:hover{color:#00614E;}
 select:focus{outline:none;}
 option{
-	border-bottom:1px solid #00BB96; 
+	border-bottom:1px solid #004D3D; 
 	background:none; 
 	font-weight:normal; 
 	font-size:16px; 
 	color:#00614E;
 }
-option:selected{font-weight:bold; color:#00614E;background:#00BB96;}
-option:hover{color:#00614E; background:#00BB96;}
+option:selected{font-weight:bold; color:#00614E;background:#00614E;}
+option:hover{color:#00614E; background:#008066;}
 option:disabled{color:#00614E; background:#00BB96;}
 
 button{
