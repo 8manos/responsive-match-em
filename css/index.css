@@ -40,10 +40,9 @@ h2{color:#547B97; font-size:24px;}
 }
 
 select{
-	font-family: 'skiaregular';
-	font:bold 18px sovba-1,sovba-2,sans-serif; 
-	color:#00614E;
-	background:#00BB96; 
+	//*font:bold 18px sovba-1,sovba-2,sans-serif;*// 
+	color:#00362B;
+	background:#00614E;
 	width:70.6px; 
 	border:none; -webkit-appearance:none;
 	position: relative; 
