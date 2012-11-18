@@ -104,10 +104,11 @@ h1{
 
 select{
 	font-family: 'skiaregular';
+	font-size: 17px;
 }
 
 select ,select:hover {
-    color:#002921;
+    color:#001A14;
 }
 
 #l:before{
