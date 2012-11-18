@@ -41,8 +41,8 @@ h2{color:#547B97; font-size:24px;}
 
 select{
 	//*font:bold 18px sovba-1,sovba-2,sans-serif;*// 
-	color:#002921;
-	background:#00614E;
+	color:#00BB96;
+	background:#002921;
 	width:70.6px; 
 	border:none; -webkit-appearance:none;
 	position: relative; 
@@ -50,40 +50,40 @@ select{
 	margin-left:4px;
 }
 
-select:hover{color:#002921;}
+select:hover{color:#00BB96;}
 select:focus{outline:none;}
 option{
 	border-bottom:1px solid #004D3D; 
 	background:none; 
 	font-weight:normal; 
 	font-size:16px; 
-	color:#002921;
+	color:#00BB96;
 }
-option:selected{font-weight:bold; color:#002921;background:#00614E;}
-option:hover{color:#002921; background:#008066;}
-option:disabled{color:#002921; background:#00BB96;}
+option:selected{font-weight:bold; color:#00BB96;background:#002921;}
+option:hover{color:#008066; background:#002921;}
+option:disabled{color:#00614E; background:#002921;}
 
 button{
-	background-color:#00BB96; 
+	background-color:#002921; 
 	background-image:-webkit-linear-gradient(top, #7fbf4d, #63a62f); 
 	background-image:-moz-linear-gradient(top, #7fbf4d, #63a62f); 
 	background-image:-ms-linear-gradient(top, #7fbf4d, #63a62f);
-	border: 1px solid #63a62f; 
-	border-bottom: 1px solid #5b992b; 
+	border: 1px solid #002921; 
+	border-bottom: 1px solid #002921; 
 	border-radius: 6px;
-	-webkit-box-shadow:inset 0 1px 0 0 #96ca6d; 
-	box-shadow:inset 0 1px 0 0 #96ca6d;
+	-webkit-box-shadow:inset 0 1px 0 0 #001A14; 
+	box-shadow:inset 0 1px 0 0 #001A14;
 	color: #00614E; 
 	font:18px/12px sovba-1,sovba-2,sans-serif; 
 	letter-spacing: 2px;
 	width: 128px; 
 	padding: 6px 0; 
 	text-align: center; 
-	text-shadow: 0 -1px 0 #4c9021; 
+	text-shadow: 0 -1px 0 #001A14; 
 	cursor: pointer;
 }
 button:hover{
-    background-color:#background:#00BB96;; 
+    background-color:#background:#002921;; 
     background-image:-webkit-linear-gradient(top, #76b347, #5e9e2e); 
     background-image:-moz-linear-gradient(top, #76b347, #5e9e2e); 
     background-image:-ms-linear-gradient(top, #76b347, #5e9e2e);
@@ -96,7 +96,7 @@ button:active{
     border-bottom: 1px solid #538c27;
     -webkit-box-shadow:inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee; 
     box-shadow:inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
-    color: #008066;
+    color: #00BB96;
 }
 
 #r{overflow:hidden; margin: 0 auto;}
