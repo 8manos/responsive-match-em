@@ -1,8 +1,8 @@
 html, body{margin:0; height:100%;}
 body{background:url(../img/img_fondo03.jpg)#fff8f0; background-repeat: no-repeat;  font:16px sovba-1,sovba-2,sans-serif;}
 
-h1, h2{margin:0; padding:12px 0; line-height: 40px; font-weight:bold; }
-h1{color:#9DBBB5; font-size:29px; text-shadow:0.5px 0.5px 0.5px #000014;}
+h1, h2{margin:0; padding:12px 0; line-height: 40px; }
+h1{color:#9DBBB5; font-size:29px; /*text-shadow:0.5px 0.5px 0.5px #000014;*/}
 h2{color:#547B97; font-size:24px;}
 
 #l{
@@ -40,7 +40,7 @@ h2{color:#547B97; font-size:24px;}
 }
 
 select{
-	//*font:bold 18px sovba-1,sovba-2,sans-serif;*// 
+	/*font:bold 18px sovba-1,sovba-2,sans-serif;*/
 	color:#00BB96;
 	background:#002921;
 	width:70.6px; 
@@ -79,7 +79,7 @@ button{
 	width: 128px; 
 	padding: 6px 0; 
 	text-align: center; 
-	text-shadow: 0 -1px 0 #001A14; 
+	/*text-shadow: 0 -1px 0 #001A14;*/ 
 	cursor: pointer;
 }
 button:hover{
@@ -105,9 +105,19 @@ article{width:160px; height:160px; float:left; position:relative;}
 .done{opacity:0.33; -moz-transition:opacity 0.4s ease-in-out; -webkit-transition:opacity 0.4s ease-in-out; -ms-transition:opacity 0.4s ease-in-out;}
 
 div{
-	margin:auto; border:8px solid #212B40; position:absolute; top:0; bottom:0; left:0; right:0;
-	background:url(../img/f.png) center center repeat #000; border-radius:8px; -webkit-box-shadow:0 8px 6px -2px #000; box-shadow:0 8px 6px -2px #000;
-	-moz-transition:width 0.2s ease-out; -webkit-transition:width 0.2s ease-out; -ms-transition:width 0.2s ease-out; cursor:pointer;
+	margin:auto; 
+	border:8px solid #212B40; 
+	position:absolute; top:0; 
+	bottom:0; 
+	left:0; 
+	right:0;
+	background:url(../img/f.png) center center repeat #000; 
+	border-radius:8px; 
+	-webkit-box-shadow:0px 0px 2px 2px rgba(0, 26, 20, 0.6); 
+	box-shadow:0px 0px 2px 2px rgba(0, 26, 20, 0.6);
+	-moz-transition:width 0.2s ease-out; 
+	-webkit-transition:width 0.2s ease-out; 
+	-ms-transition:width 0.2s ease-out; cursor:pointer;
 }
 .done div, .used div, .hold div{cursor:default;}
 .flipped{
