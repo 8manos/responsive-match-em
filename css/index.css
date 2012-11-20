@@ -113,8 +113,8 @@ div{
 	right:0;
 	background:url(../img/f.png) center center repeat #00BB96; 
 	border-radius:8px; 
-	-webkit-box-shadow:0px 0px 2px -2px rgba(0, 26, 20, 0.6); 
-	box-shadow:0px 0px 2px -2px rgba(0, 26, 20, 0.6);
+	-webkit-box-shadow:0px 0px 2px 2px rgba(0, 26, 20, 0.6); 
+	box-shadow:0px 0px 2px 2px rgba(0, 26, 20, 0.6);
 	-moz-transition:width 0.2s ease-out; 
 	-webkit-transition:width 0.2s ease-out; 
 	-ms-transition:width 0.2s ease-out; cursor:pointer;
