@@ -144,7 +144,10 @@ div{
 @media (min-aspect-ratio:1/1){
 	header{float:left; width:150px; margin:4px;}
 
-	#b{display: none;}
+	#b{
+	display: none;
+	margin: 0 0 0 90px;	
+	}
 
 	#r{height:100% !important;}
 }
