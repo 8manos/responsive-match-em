@@ -14,17 +14,6 @@
 
 }
 
-@font-face {
-    font-family: 'soggy_kittenregular';
-    src: url('../fuentes/soggy_kitten-webfont.eot');
-    src: url('../fuentes/soggy_kitten-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fuentes/soggy_kitten-webfont.woff') format('woff'),
-         url('../fuentes/soggy_kitten-webfont.ttf') format('truetype'),
-         url('../fuentes/soggy_kitten-webfont.svg#soggy_kittenregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
 
 @font-face {
     font-family: 'skiaregular';
@@ -39,12 +28,13 @@
 }
 
 body{
-	background-image: url(../img/img_fondo03.jpg);
+	background-image: url(../img/img_fondo.png);
 	background-position: left top;
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
+    font-family: 'skiaregular';
 }
 
 div {
@@ -53,8 +43,40 @@ div {
 	background-size: contain;
 	background-image: url(../img/willi_reverso.png);
 	border: none;
-	width: 90px;
 }
+
+.level-2 div {
+    background-image: url(../img/willi_reverso.png);
+}
+
+.level-3 div {
+    background-image: url(../img/flora_reverso.png);
+}
+
+.level-4 div {
+    background-image: url(../img/aisha_reverso.png);
+}
+
+.level-5 div {
+    background-image: url(../img/vazul_reverso.png);
+}
+
+.level-6 div {
+    background-image: url(../img/vmorado_reverso.png);
+}
+
+.level-7 div {
+    background-image: url(../img/willi_reverso.png);
+}
+
+.level-8 div {
+    background-image: url(../img/flora_reverso.png);
+}
+
+.level-9 div {
+    background-image: url(../img/aisha_reverso.png);
+}
+
 
 header{
 	float: left;
@@ -63,11 +85,89 @@ header{
 }
 
 h1{
-	color: #00BB96;
+	color: #00362B;
+    font-family: 'airstream_itcregular';
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+select{
+	font-family: 'skiaregular';
+	font-size: 17px;
+}
+
+select ,select:hover {
+    color:#00BB96;
 }
 
 #l:before{
 	background: transparent;
+}
+
+#s button {
+    -webkit-box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    display: block;
+    font-family: 'airstream_itcregular';
+    font-size: 1em;
+    line-height: 57px;
+    text-align: left;
+    width: 165px;
+    margin: 0px 0px 0px 60px;
+}
+
+#s button:before {
+    background: transparent url("../img/img_01.png") no-repeat -36px -273px;
+    content: " ";
+    display: inline-block;
+    float:left;
+    height: 52px;
+    margin-right: 20px;
+    vertical-align: middle;
+    width: 52px;
+}
+
+#s button:hover:before {
+    background-position:-123px -273px;
+}
+
+#s button:active:before {
+    background-position:-209px -273px;
+}
+
+#b span ,
+#s span {
+    color:#fff;
+}
+
+#win {
+    background-color: transparent;
+    background-image: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #fff;
+    display: none;
+    font-family: 'airstream_itcregular';
+    font-size: 5em;
+    left:0;
+    position:fixed;
+    text-align: center;
+    text-shadow: 0 0 6px #000;
+    top:0%;
+    width: 100%;
+}
+
+#win h3 ,
+#win h4 {
+    margin: 0;
+    padding: 0;
+}
+
+#win h4 {
+    font-size: 0.7em;
 }
 
 .done {
@@ -75,6 +175,6 @@ h1{
 }
 
 .done div {
-	-webkit-box-shadow:0 0px 6px -2px rgba(255,255,255,0.6);
-	box-shadow:0 0px 6px 4px rgba(255,255,255,0.6);
+	-webkit-box-shadow:0px 0px 6px -2px rgba(0, 26, 20, 0.6);;
+	box-shadow:0px 0px 6px -2px rgba(0, 26, 20, 0.6);;
 }
