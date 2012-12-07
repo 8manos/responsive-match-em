@@ -22,10 +22,13 @@ function getElNum()
 {
 	getSpace();
 
-	num = Math.floor(space / 160);
+	num = Math.floor(space / 140);
 	if (num == 1){
 		num = 2;
 	}
+
+	//ahora empieza desde el nivel 3 (o el 2 si es que no caben mas)
+	num = Math.min(num, 3);
 
 	setSelectedLevel(num);
 }
@@ -38,7 +41,7 @@ function getSpace()
 	var max = Math.max(width, height);
 	var min = Math.min(width, height);
 
-	space = Math.min(max - 160, min);
+	space = Math.min(max - 140, min);
 }
 
 function setSelectedLevel(num)
@@ -62,9 +65,9 @@ function setAvailLevels()
 	var max_space = Math.max(max_width, max_height);
 	var min_space = Math.min(max_width, max_height);
 
-	var avail_space = Math.min(max_space - 160, min_space);
+	var avail_space = Math.min(max_space - 140, min_space);
 
-	var max_rows = Math.floor(avail_space / 160);
+	var max_rows = Math.floor(avail_space / 140);
 
 	var max_level = Math.max(num, max_rows);
 
@@ -150,12 +153,12 @@ function getPics()
 
 function fixLayout()
 {
-	$('#r').height(space).css('min-width', num*150+'px').css('min-height', num*150+'px');
+	$('#r').height(space).css('min-width', num*105+'px').css('min-height', num*140+'px');
 
 	$('article').width(100/num+'%').height(100/num+'%');
 
-	var max_card_width = $('article').width() - 30;
-	var max_card_height = $('article').height() - 30;
+	var max_card_width = $('article').width() - 20;
+	var max_card_height = $('article').height() - 20;
 
 	var multip = Math.floor( Math.min((max_card_width / 17), (max_card_height / 24), 10) );
 
@@ -224,15 +227,15 @@ function finishResize()
 	var new_max = Math.max(new_width, new_height);
 	var new_min = Math.min(new_width, new_height);
 
-	var new_space = Math.min(new_max - 160, new_min);
+	var new_space = Math.min(new_max - 140, new_min);
 
 	if (new_space > 0){
 		if (running){
-			if (new_space < num*150){
+			if (new_space < num*140){
 				confirmChangeLevel();
 			}
 		}else{
-			if (new_space < num*150 || new_space > (num+1)*150){
+			if (new_space < num*140 || new_space > (num+1)*140){
 				newGame('auto');
 			}
 		}
@@ -268,10 +271,10 @@ function newGame(rows)
 
 	if (rows != 'auto'){
 		//cambiamos el tamaño de la ventana si se deja
-		var new_width = (max_width > max_height)? 160*(rows+1) : 160*rows;
-		var new_height = (max_width > max_height)? 160*rows : 160*(rows+1);
+		var new_width = (max_width > max_height)? 105*(rows+1) : 105*rows;
+		var new_height = (max_width > max_height)? 140*rows : 140*(rows+1);
 		var toolbar = window.outerHeight + 16 - window.innerHeight;
-		window.resizeTo(new_width+40, new_height+toolbar);
+		window.resizeTo(new_width+24, new_height+toolbar);
 	}
 }
 
