@@ -101,11 +101,11 @@ select ,select:hover {
     color:#00BB96;
 }
 
-#l:before{
+#levels:before{
 	background: transparent;
 }
 
-#s button {
+#start button {
     -webkit-box-shadow: none;
     background-color: transparent;
     background-image: none;
@@ -120,7 +120,7 @@ select ,select:hover {
     margin: 0px 0px 0px 60px;
 }
 
-#s button:before {
+#start button:before {
     background: transparent url("../img/img_01.png") no-repeat -36px -273px;
     content: " ";
     display: inline-block;
@@ -131,16 +131,16 @@ select ,select:hover {
     width: 52px;
 }
 
-#s button:hover:before {
+#start button:hover:before {
     background-position:-123px -273px;
 }
 
-#s button:active:before {
+#start button:active:before {
     background-position:-209px -273px;
 }
 
-#b span ,
-#s span {
+#best span ,
+#start span {
     color:#fff;
 }
 

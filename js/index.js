@@ -46,8 +46,8 @@ function getSpace()
 
 function setSelectedLevel(num)
 {
-	$('#l option').prop('selected', false);
-	$('#l option').eq(num-2).prop('selected', true);
+	$('#levels option').prop('selected', false);
+	$('#levels option').eq(num-2).prop('selected', true);
 	$('body').removeClass().addClass('level-'+num);
 }
 
@@ -71,7 +71,7 @@ function setAvailLevels()
 
 	var max_level = Math.max(num, max_rows);
 
-	$('#l option').slice(max_level-1).prop('disabled', true);
+	$('#levels option').slice(max_level-1).prop('disabled', true);
 }
 
 function cloneCards()
@@ -81,7 +81,7 @@ function cloneCards()
 	for (i=1; i<total; i++){
 		$card = $('#0').clone();
 		$card.attr('id', i);
-		$card.appendTo('#r');
+		$card.appendTo('#cards');
 	}
 }
 
@@ -153,7 +153,7 @@ function getPics()
 
 function fixLayout()
 {
-	$('#r').height(space).css('min-width', num*105+'px').css('min-height', num*140+'px');
+	$('#cards').height(space).css('min-width', num*105+'px').css('min-height', num*140+'px');
 
 	$('article').width(100/num+'%').height(100/num+'%');
 
@@ -195,7 +195,7 @@ function randOrd()
 function setUp()
 {
 	$('button').live('click', function(){
-		$('#s').html('Tiempo: <span>00:00</span>');
+		$('#start').html('Tiempo: <span>00:00</span>');
 		running = true;
 		seconds = 0;
 		timer();
@@ -213,7 +213,7 @@ function setUp()
 		resizeTimer = setTimeout(finishResize, 999);
 	});
 
-	$('#l select').live('change', function(){
+	$('#levels select').live('change', function(){
 		var rows = $(this).children('option:selected').index()+2;
 		newGame(rows);
 	});
@@ -280,7 +280,7 @@ function newGame(rows)
 
 function deleteCards()
 {
-	$('#r, div').css('background', '');
+	$('#cards, div').css('background', '');
 	$('article:not(#0)').remove();
 	$('#0').removeClass('done used hold');
 }
@@ -295,14 +295,14 @@ function timer()
 	minutes = ( minutes < 10 ? "0" : "" ) + minutes;
 	secs = ( secs < 10 ? "0" : "" ) + secs;
 
-	$('#s span').text(minutes+':'+secs);
+	$('#start span').text(minutes+':'+secs);
 
 	seconds = seconds+1;
 }
 
 function resetBoard()
 {
-	$('#r, div').css('background', '');
+	$('#cards, div').css('background', '');
 	$('article').removeClass('done used hold');
 	$('div:not(#win)').width(cardwidth).height(cardheight).fadeIn();
 
@@ -374,9 +374,9 @@ function checkFinish()
 
 		if (best[num-2] == 0 || best[num-2] >= seconds){
 			best[num-2] = seconds-1;
-			$('#b span').remove();
-			$('#s span').clone().appendTo($('#b'));
-			$('#b').slideDown();
+			$('#best span').remove();
+			$('#start span').clone().appendTo($('#best'));
+			$('#best').slideDown();
 		}
 
 		resetStart();
@@ -388,7 +388,7 @@ function resetStart()
 	running = false;
 	clearTimeout(t);
 
-	$('#s').html('<button>Iniciar</button>');
+	$('#start').html('<button>Iniciar</button>');
 
 	$("article:not(.done, .used)").die('click', clickCard);
 }
@@ -397,7 +397,7 @@ function setBest()
 {
 	var level_best = best[num-2];
 	if (level_best == 0){
-		$('#b span').text('');
+		$('#best span').text('');
 	}else{
 		var minutes = Math.floor(level_best/60);
 		var secs = level_best%60;
@@ -405,7 +405,7 @@ function setBest()
 		minutes = ( minutes < 10 ? "0" : "" ) + minutes;
 		secs = ( secs < 10 ? "0" : "" ) + secs;
 
-		$('#b span').text(minutes+':'+secs);
+		$('#best span').text(minutes+':'+secs);
 	}
 }
 
