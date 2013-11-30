@@ -28,6 +28,7 @@
 }
 
 body{
+    margin: 1em;
     background-attachment: fixed;
 	background-image: url(../img/img_fondo.png);
 	background-position: left top;
@@ -80,9 +81,16 @@ div {
 
 
 header{
-	float: left;
-	width: 300px;
-	margin: 10px 0px 0px 50px;
+    width: 100%;
+	height: 120px;
+    overflow: hidden;
+    margin-bottom: 1em;
+}
+
+header h1{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 3em;
 }
 
 h1{
@@ -92,6 +100,10 @@ h1{
     text-align: center;
 }
 
+h2{
+    display: inline-block;
+}
+
 select{
 	font-family: 'skiaregular';
 	font-size: 17px;
@@ -99,6 +111,29 @@ select{
 
 select ,select:hover {
     color:#00BB96;
+}
+
+#logo{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#play{
+    display: block;
+    overflow: hidden;
+}
+
+#play h2{
+    vertical-align: middle;
+}
+
+#cards{
+    overflow: hidden;
+    background: rgba(255,255,255,.6);
+    border-radius: 8px;
+    box-shadow: 0 0 6px rgba(0,0,0,.6);
+    margin: 1em 0;
+    padding: 1em 2em;
 }
 
 #levels:before{
@@ -116,8 +151,8 @@ select ,select:hover {
     font-size: 1em;
     line-height: 57px;
     text-align: left;
-    width: 165px;
-    margin: 0px 0px 0px 60px;
+    width: auto;
+    margin: 0 1em;
 }
 
 #start button:before {
@@ -125,10 +160,10 @@ select ,select:hover {
     content: " ";
     display: inline-block;
     float:left;
-    height: 52px;
+    height: 55px;
     margin-right: 20px;
     vertical-align: middle;
-    width: 52px;
+    width: 55px;
 }
 
 #start button:hover:before {
