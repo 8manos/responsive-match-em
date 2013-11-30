@@ -8,8 +8,6 @@ var done = [];
 $(function(){
 	getElNum();
 
-	setAvailLevels();
-
 	cloneCards();
 	getPics();
 
@@ -35,8 +33,15 @@ function getElNum()
 
 function getSpace()
 {
-	width = window.innerWidth;
-	height = window.innerHeight;
+	width = $('body').width();
+	height = $('body').height() - $('header').outerHeight() - $('#play').outerHeight(true);
+
+	//game area top+bottom padding+margin
+	var game_area_vspace = parseInt($('#game-area').css('padding-top')) + parseInt($('#game-area').css('padding-bottom')) + parseInt($('#game-area').css('margin-top')) + parseInt($('#game-area').css('margin-bottom'));
+	var game_area_hspace = parseInt($('#game-area').css('padding-left')) + parseInt($('#game-area').css('padding-right')) + parseInt($('#game-area').css('margin-left')) + parseInt($('#game-area').css('margin-right'));
+
+	width = width - game_area_hspace;
+	height = height - game_area_vspace;
 
 	var max = Math.max(width, height);
 	var min = Math.min(width, height);
@@ -49,29 +54,6 @@ function setSelectedLevel(num)
 	$('#levels option').prop('selected', false);
 	$('#levels option').eq(num-2).prop('selected', true);
 	$('body').removeClass().addClass('level-'+num);
-}
-
-function setAvailLevels()
-{
-	var screen_width = screen.availWidth;
-	var screen_height = screen.availHeight;
-
-	var scrollbar = 24;
-	var toolbar = window.outerHeight - height;
-
-	max_width = screen_width - scrollbar;
-	max_height = screen_height - toolbar;
-
-	var max_space = Math.max(max_width, max_height);
-	var min_space = Math.min(max_width, max_height);
-
-	var avail_space = Math.min(max_space - 140, min_space);
-
-	var max_rows = Math.floor(avail_space / 140);
-
-	var max_level = Math.max(num, max_rows);
-
-	$('#levels option').slice(max_level-1).prop('disabled', true);
 }
 
 function cloneCards()
@@ -153,7 +135,7 @@ function getPics()
 
 function fixLayout()
 {
-	$('#cards').height(space).css('min-width', num*105+'px').css('min-height', num*140+'px');
+	$('#cards').height(height).css('min-width', num*105+'px').css('min-height', num*140+'px');
 
 	$('article').width(100/num+'%').height(100/num+'%');
 
