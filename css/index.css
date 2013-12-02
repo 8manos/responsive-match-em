@@ -15,7 +15,7 @@ h2{ font-size:24px;}
 	letter-spacing: 2px;
 }
 
-#levels:before{
+/*#levels:before{
 	content:"";
 	background:#00BB96;
 	height:25px;
@@ -37,7 +37,7 @@ h2{ font-size:24px;}
 	left:130px;
 	top:28px;
 	z-index:-1;
-}
+}*/
 
 select{
 	/*font:bold 18px sovba-1,sovba-2,sans-serif;*/
