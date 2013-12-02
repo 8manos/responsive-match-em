@@ -176,10 +176,12 @@ function randOrd()
 
 function setUp()
 {
-	$('button').live('click', function(){
-		$('#start').html('Tiempo: <span>00:00</span>');
+	$('#start button').live('click', function(){
+		$('#time').html('Tiempo: <span>00:00</span>');
+		$('#start').html('<button class="play">Reiniciar</button>');
 		running = true;
 		seconds = 0;
+		clearTimeout(t);
 		timer();
 
 		resetBoard();
@@ -277,7 +279,7 @@ function timer()
 	minutes = ( minutes < 10 ? "0" : "" ) + minutes;
 	secs = ( secs < 10 ? "0" : "" ) + secs;
 
-	$('#start span').text(minutes+':'+secs);
+	$('#time span').text(minutes+':'+secs);
 
 	seconds = seconds+1;
 }
@@ -290,6 +292,8 @@ function resetBoard()
 
 	done = [];
 	setCardsArray();
+
+	$("article:not(.done, .used)").die('click', clickCard);
 }
 
 function clickCard()
@@ -357,7 +361,7 @@ function checkFinish()
 		if (best[num-2] == 0 || best[num-2] >= seconds){
 			best[num-2] = seconds-1;
 			$('#best span').remove();
-			$('#start span').clone().appendTo($('#best'));
+			$('#time span').clone().appendTo($('#best'));
 			$('#best').slideDown();
 		}
 
@@ -370,7 +374,7 @@ function resetStart()
 	running = false;
 	clearTimeout(t);
 
-	$('#start').html('<button>Iniciar</button>');
+	$('#start').html('<button class="play">Iniciar</button>');
 
 	$("article:not(.done, .used)").die('click', clickCard);
 }
