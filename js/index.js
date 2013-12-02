@@ -1,9 +1,18 @@
-var width, height, maxwidth, maxheight, space, num, entries, seconds, t, resizeTimer, cardwidth, cardheight;
+var width, height, space, level, entries, seconds, t, resizeTimer, cardwidth, cardheight;
 var running = false;
 var best = [0,0,0,0,0,0,0,0];
 var pics = [];
 var cards = [];
 var done = [];
+var levels = [
+	{total: 4, rows: 1, cols: 4},
+	{total: 6, rows: 2, cols: 3},
+	{total: 8, rows: 2, cols: 4},
+	{total: 12, rows: 3, cols: 4},
+	{total: 16, rows: 2, cols: 8},
+	{total: 20, rows: 4, cols: 5},
+	{total: 24, rows: 4, cols: 6}
+];
 
 $(function(){
 	getElNum();
@@ -20,15 +29,12 @@ function getElNum()
 {
 	getSpace();
 
-	num = Math.floor(space / 140);
-	if (num == 1){
-		num = 2;
-	}
+	level = Math.floor(space / 140);//140 es el alto mínimo de las cartas
 
-	//ahora empieza desde el nivel 3 (o el 2 si es que no caben mas)
-	num = Math.min(num, 3);
+	//ahora empieza desde el nivel 1 siempre
+	level = 1;
 
-	setSelectedLevel(num);
+	setSelectedLevel(level);
 }
 
 function getSpace()
@@ -46,19 +52,21 @@ function getSpace()
 	var max = Math.max(width, height);
 	var min = Math.min(width, height);
 
-	space = Math.min(max - 140, min);
+	space = Math.min(max, min);
+
+	console.log('space: ', space);
 }
 
-function setSelectedLevel(num)
+function setSelectedLevel(level)
 {
 	$('#levels option').prop('selected', false);
-	$('#levels option').eq(num-2).prop('selected', true);
-	$('body').removeClass().addClass('level-'+num);
+	$('#levels option').eq(level-1).prop('selected', true);
+	$('body').removeClass().addClass('level-'+level);
 }
 
 function cloneCards()
 {
-	var total = num*num;
+	var total = levels[level-1].total;
 	var $card;
 	for (i=1; i<total; i++){
 		$card = $('#0').clone();
@@ -69,7 +77,7 @@ function cloneCards()
 
 function getPics()
 {
-	entries = Math.floor(num*num/2);
+	entries = Math.floor(levels[level-1].total/2);
 
 	pics = [
 		"img/ooommm/aisha_bamboo.png",
@@ -135,9 +143,11 @@ function getPics()
 
 function fixLayout()
 {
-	$('#cards').height(height).css('min-width', num*105+'px').css('min-height', num*140+'px');
+	$('#cards').height(height).width(width);
+	var rows = levels[level-1].rows;
+	var cols = levels[level-1].cols;
 
-	$('article').width(100/num+'%').height(100/num+'%');
+	$('article').width(100/cols+'%').height(100/rows+'%');
 
 	var max_card_width = $('article').width() - 20;
 	var max_card_height = $('article').height() - 20;
@@ -147,26 +157,20 @@ function fixLayout()
 	cardwidth = multip*17;
 	cardheight = multip*24;
 
-	$('div:not(#win)').width(cardwidth).height(cardheight);
+	$('.card').width(cardwidth).height(cardheight);
 }
 
 function setCardsArray()
 {
 	cards = [];
-	//lleno el arreglo con los nums de las fotos y lo randomizo
+	//lleno el arreglo con los levels de las fotos y lo randomizo
 	for (i=0; i<entries; i++){
 		cards.push(i);
 	}
+
+	//dos cartas de cada motivo, para hacer las parejas
 	cards = cards.concat(cards);
 	cards.sort( randOrd );
-	//si es impar
-	if (num % 2){
-		var lo_half = cards.slice(0, entries);
-		var hi_half = cards.slice(entries);
-		cards = lo_half.concat(['star'], hi_half);
-		$('#'+entries).addClass('done');
-		//aca le puedo agregar la estrella con css
-	}
 }
 
 function randOrd()
@@ -190,59 +194,24 @@ function setUp()
 	});
 
 	$(window).resize(function(e) {
-		//si el resize fue generado por el programa, actualiza width, height y space
-		getSpace();
-
 		clearTimeout(resizeTimer);
 		resizeTimer = setTimeout(finishResize, 999);
 	});
 
 	$('#levels select').live('change', function(){
-		var rows = $(this).children('option:selected').index()+2;
-		newGame(rows);
+		level = $(this).children('option:selected').index()+1;
+		newGame(level);
 	});
 }
 
 function finishResize()
 {
-	var new_width = window.innerWidth;
-	var new_height = window.innerHeight;
-
-	var new_max = Math.max(new_width, new_height);
-	var new_min = Math.min(new_width, new_height);
-
-	var new_space = Math.min(new_max - 140, new_min);
-
-	if (new_space > 0){
-		if (running){
-			if (new_space < num*140){
-				confirmChangeLevel();
-			}
-		}else{
-			if (new_space < num*140 || new_space > (num+1)*140){
-				newGame('auto');
-			}
-		}
-	}
+	getSpace();
 };
 
-function confirmChangeLevel()
+function newGame(level)
 {
-	var new_game = confirm('Tu pantalla ahora es mas pequeña, quieres intentar con menos cartas?');
-	if (new_game == true){
-		newGame('auto');
-	}
-}
-
-function newGame(rows)
-{
-	if (rows == 'auto'){
-		getElNum();
-	}else{
-		//ponemos los elementos necesarios unicamente
-		num = rows;
-		setSelectedLevel(num);
-	}
+	setSelectedLevel(level);
 
 	deleteCards();
 	cloneCards();
@@ -288,7 +257,7 @@ function resetBoard()
 {
 	$('#cards, div').css('background', '');
 	$('article').removeClass('done used hold');
-	$('div:not(#win)').width(cardwidth).height(cardheight).fadeIn();
+	$('.card').width(cardwidth).height(cardheight).fadeIn();
 
 	done = [];
 	setCardsArray();
@@ -358,8 +327,8 @@ function checkFinish()
 		$('div').fadeOut();
 		$('#win').fadeIn().delay(1888).fadeOut();
 
-		if (best[num-2] == 0 || best[num-2] >= seconds){
-			best[num-2] = seconds-1;
+		if (best[level-1] == 0 || best[level-1] >= seconds){
+			best[level-1] = seconds-1;
 			$('#best span').remove();
 			$('#time span').clone().appendTo($('#best'));
 			$('#best').slideDown();
@@ -381,7 +350,7 @@ function resetStart()
 
 function setBest()
 {
-	var level_best = best[num-2];
+	var level_best = best[level-1];
 	if (level_best == 0){
 		$('#best span').text('');
 	}else{
