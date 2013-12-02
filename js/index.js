@@ -11,7 +11,8 @@ var levels = [
 	{total: 12, rows: 3, cols: 4},
 	{total: 16, rows: 2, cols: 8},
 	{total: 20, rows: 4, cols: 5},
-	{total: 24, rows: 4, cols: 6}
+	{total: 24, rows: 4, cols: 6},
+	{total: 32, rows: 4, cols: 8}
 ];
 
 $(function(){
@@ -149,8 +150,8 @@ function fixLayout()
 
 	$('article').width(100/cols+'%').height(100/rows+'%');
 
-	var max_card_width = $('article').width() - 20;
-	var max_card_height = $('article').height() - 20;
+	var max_card_width = $('article').width() - 10;
+	var max_card_height = $('article').height() - 10;
 
 	var multip = Math.floor( Math.min((max_card_width / 17), (max_card_height / 24), 10) );
 

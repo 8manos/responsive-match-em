@@ -48,7 +48,6 @@ body{
 	-moz-background-size: cover;
 	background-size: cover;
     font-family: 'skiaregular';
-    margin: 1em;
 }
 
 div {
@@ -92,8 +91,8 @@ div {
 }
 
 header{
-	height: 120px;
-    margin-bottom: 1em;
+    height: 120px;
+    padding: 1em 0 0;
     overflow: hidden;
     width: 100%;
 }
