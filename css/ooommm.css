@@ -38,7 +38,11 @@
 }
 
 body{
+<<<<<<< HEAD
     color: #00535E;
+=======
+    padding: 0 1em;
+>>>>>>> 7ff1ef28d331ddb1cf1ab48f261f9355bafeb6fd
     background-attachment: fixed;
 	background-image: url(../img/img_fondo.png);
 	background-position: left top;
@@ -136,7 +140,12 @@ select ,select:hover {
     text-align: center;
 }
 
+<<<<<<< HEAD
 #cards{
+=======
+#game-area{
+    overflow: hidden;
+>>>>>>> 7ff1ef28d331ddb1cf1ab48f261f9355bafeb6fd
     background: rgba(255,255,255,.6);
     border-radius: 8px;
     box-shadow: 0 0 6px rgba(0,0,0,.6);
