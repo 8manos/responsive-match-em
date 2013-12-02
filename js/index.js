@@ -335,6 +335,7 @@ function checkFinish()
 		}
 
 		resetStart();
+		enableNext();
 	}
 }
 
@@ -346,6 +347,11 @@ function resetStart()
 	$('#start').html('<button class="play">Iniciar</button>');
 
 	$("article:not(.done, .used)").die('click', clickCard);
+}
+
+function enableNext()
+{
+	$('#levels option').eq(level).prop('disabled', false);
 }
 
 function setBest()
