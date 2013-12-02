@@ -1,9 +1,9 @@
-html, body{margin:0; height:100%;}
+html, body{margin:0; height:100%; color: #00535E;}
 body{background:url(../img/img_fondo.png)#fff8f0; background-repeat: no-repeat;  font:16px sovba-1,sovba-2,sans-serif;}
 
 h1, h2{margin:0; padding:12px 0; line-height: 40px; }
-h1{color:#9DBBB5; font-size:29px; /*text-shadow:0.5px 0.5px 0.5px #000014;*/}
-h2{color:#547B97; font-size:24px;}
+h1{font-size:29px; /*text-shadow:0.5px 0.5px 0.5px #000014;*/}
+h2{ font-size:24px;}
 
 #l{
 	overflow: hidden; 
@@ -41,13 +41,10 @@ h2{color:#547B97; font-size:24px;}
 
 select{
 	/*font:bold 18px sovba-1,sovba-2,sans-serif;*/
-	color:#00BB96;
 	background:#002921;
-	width:70.6px; 
 	border:none; -webkit-appearance:none;
-	position: relative; 
-	top: -8px; 
-	margin-left:4px;
+	color:#00BB96;
+	position: relative;
 }
 
 select:hover{color:#00BB96;}

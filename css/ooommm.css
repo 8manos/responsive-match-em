@@ -14,7 +14,6 @@
 
 }
 
-
 @font-face {
     font-family: 'skiaregular';
     src: url('../fuentes/skia-webfont.eot');
@@ -27,8 +26,19 @@
 
 }
 
+@font-face {
+    font-family: 'houseregular';
+    src: url('../fuentes/thekingsofthehouse-regular-webfont.eot');
+    src: url('../fuentes/thekingsofthehouse-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fuentes/thekingsofthehouse-regular-webfont.woff') format('woff'),
+         url('../fuentes/thekingsofthehouse-regular-webfont.ttf') format('truetype'),
+         url('../fuentes/thekingsofthehouse-regular-webfont.svg#the_kings_of_the_houseregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body{
-    margin: 1em;
+    color: #00535E;
     background-attachment: fixed;
 	background-image: url(../img/img_fondo.png);
 	background-position: left top;
@@ -37,6 +47,7 @@ body{
 	-moz-background-size: cover;
 	background-size: cover;
     font-family: 'skiaregular';
+    margin: 1em;
 }
 
 div {
@@ -79,22 +90,21 @@ div {
     background-image: url(../img/aisha_reverso.png);
 }
 
-
 header{
-    width: 100%;
 	height: 120px;
-    overflow: hidden;
     margin-bottom: 1em;
+    overflow: hidden;
+    width: 100%;
 }
 
 header h1{
     display: inline-block;
+    font-size: 4em;
+    text-shadow: 0 2px 0 #FFF;
     vertical-align: middle;
-    font-size: 3em;
 }
 
 h1{
-	color: #00362B;
     font-family: 'airstream_itcregular';
     letter-spacing: 2px;
     text-align: center;
@@ -102,11 +112,13 @@ h1{
 
 h2{
     display: inline-block;
+    font-family: 'houseregular';
 }
 
 select{
-	font-family: 'skiaregular';
-	font-size: 17px;
+	font-family: 'houseregular';
+	font-size: 24px;
+    padding: 0.2em 0.6em;
 }
 
 select ,select:hover {
@@ -121,23 +133,26 @@ select ,select:hover {
 #play{
     display: block;
     overflow: hidden;
-}
-
-#play h2{
-    vertical-align: middle;
+    text-align: center;
 }
 
 #cards{
-    overflow: hidden;
     background: rgba(255,255,255,.6);
     border-radius: 8px;
     box-shadow: 0 0 6px rgba(0,0,0,.6);
     margin: 1em 0;
     padding: 1em 2em;
+    overflow: hidden;
 }
 
 #levels:before{
 	background: transparent;
+}
+
+#play h2 {
+    font-size: 30px;
+    margin: 0 1em;
+    vertical-align: middle;
 }
 
 #start button {
@@ -147,12 +162,11 @@ select ,select:hover {
     border: none;
     box-shadow: none;
     display: block;
-    font-family: 'airstream_itcregular';
+    font-family: 'houseregular';
     font-size: 1em;
     line-height: 57px;
     text-align: left;
     width: auto;
-    margin: 0 1em;
 }
 
 #start button:before {
@@ -174,10 +188,6 @@ select ,select:hover {
     background-position:-209px -273px;
 }
 
-#best span ,
-#start span {
-    color:#fff;
-}
 
 #win {
     background-color: transparent;
@@ -203,6 +213,7 @@ select ,select:hover {
 }
 
 #win h4 {
+    font-family: 'houseregular';
     font-size: 0.7em;
 }
 
