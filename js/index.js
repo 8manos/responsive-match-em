@@ -374,9 +374,9 @@ function setBest()
 function unflip($cards)
 {
 	$('article').removeClass('hold');
-	$cards.children().addClass('flipped');
+	$cards.children().addClass('flipped').width(0);
 	setTimeout(function(){
-		$cards.children().css('backgroundImage', '').css('backgroundRepeat', 'repeat').removeClass('flipped');
+		$cards.children().css('backgroundImage', '').css('backgroundRepeat', 'repeat').removeClass('flipped').width(cardwidth);
 		$cards.removeClass('used');
 	}, 200);
 }

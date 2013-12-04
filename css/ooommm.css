@@ -51,9 +51,9 @@ body{
 }
 
 div {
-	-webkit-background-size: contain;
-	-moz-background-size: contain;
-	background-size: contain;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
 	background-image: url(../img/willi_reverso.png);
 	border: none;
 }
