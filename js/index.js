@@ -326,7 +326,7 @@ function checkFinish()
 {
 	if (done.length == entries){
 		$('div').fadeOut();
-		$('#win').fadeIn().delay(1888).fadeOut();
+		$('#win').fadeIn();
 
 		if (best[level-1] == 0 || best[level-1] >= seconds){
 			best[level-1] = seconds-1;
