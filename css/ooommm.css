@@ -221,33 +221,51 @@ select:before {
     background-position: -123px -432px;
 }
 
-
-#win {
-    background-color: transparent;
+#win ,
+#win-game {
+    /*background-color: transparent;
     background-image: none;
     -webkit-box-shadow: none;
     box-shadow: none;
-    color: #fff;
-    display: none;
-    font-family: 'airstream_itcregular';
-    font-size: 5em;
-    left:0;
+    eft:0;
     position:fixed;
-    text-align: center;
     text-shadow: 0 0 6px #000;
     top:0%;
-    width: 100%;
+    width: 100%;*/
+    background: rgba(255,255,255,.6);
+    border-radius: 8px;
+    box-shadow: 0 0 6px rgba(0,0,0,.6);
+    color: #005151;
+    display: none;
+    font-family: 'airstream_itcregular';
+    font-size: 4em;
+    margin: 10px 0;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
 }
 
 #win h3 ,
-#win h4 {
+#win h4 ,
+#win-game h3 ,
+#win-game h4{
     margin: 0;
     padding: 0;
 }
 
-#win h4 {
+#win h4 ,
+#win-game h4{
     font-family: 'houseregular';
     font-size: 0.7em;
+}
+
+#win #record-level{
+    display: block;
+    margin-top: 1em;
+}
+
+#win .button-txt{
+    border-radius: 1em;
 }
 
 .done {
