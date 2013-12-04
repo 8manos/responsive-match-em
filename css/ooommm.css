@@ -213,11 +213,11 @@ select:before {
     background-position:-209px -273px;
 }
 
-#start .play:before{
+#start .restart:before{
     background-position: -36px -432px;
 }
 
-#start .play:hover:before{
+#start .restart:hover:before{
     background-position: -123px -432px;
 }
 

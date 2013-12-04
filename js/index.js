@@ -183,7 +183,7 @@ function setUp()
 {
 	$('#start button').live('click', function(){
 		$('#time').html('Tiempo: <span>00:00</span>');
-		$('#start').html('<button class="play">Reiniciar</button>');
+		$('#start').html('<button class="restart">Reiniciar</button>');
 		running = true;
 		seconds = 0;
 		clearTimeout(t);
@@ -345,7 +345,7 @@ function resetStart()
 	running = false;
 	clearTimeout(t);
 
-	$('#start').html('<button class="play">Iniciar</button>');
+	$('#start').html('<button>Iniciar</button>');
 
 	$("article:not(.done, .used)").die('click', clickCard);
 }
