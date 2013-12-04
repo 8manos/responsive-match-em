@@ -118,11 +118,21 @@ h2{
 select{
 	font-family: 'houseregular';
 	font-size: 24px;
-    padding: 0.2em 0.6em;
+    color: #FFF !important;
+    background: transparent;
 }
 
 select ,select:hover {
     color:#00BB96;
+}
+
+select:before {
+    content: "▼";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    font-size: 1em;
+    color: red;s
 }
 
 #logo{
@@ -140,6 +150,18 @@ select ,select:hover {
     overflow: hidden;
 }
 
+#levels {
+    background-color: #00535E;
+    border-radius: 8px;
+    color: white;
+    letter-spacing: 2px;
+    overflow: hidden;
+    padding: 0.2em 1em !important;
+    position: relative;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
 #levels:before{
 	background: transparent;
 }
@@ -153,7 +175,8 @@ select ,select:hover {
 
 #play h2 {
     font-size: 30px;
-    margin: 0 1em;
+    margin: 0 1em 0 0;
+    padding: 0;
     vertical-align: middle;
 }
 
@@ -188,6 +211,14 @@ select ,select:hover {
 
 #start button:active:before {
     background-position:-209px -273px;
+}
+
+#start .play:before{
+    background-position: -36px -432px;
+}
+
+#start .play:hover:before{
+    background-position: -123px -432px;
 }
 
 

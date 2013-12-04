@@ -5,7 +5,7 @@ h1, h2{margin:0; padding:12px 0; line-height: 40px; }
 h1{font-size:29px; /*text-shadow:0.5px 0.5px 0.5px #000014;*/}
 h2{ font-size:24px;}
 
-#levels{
+/*#levels{
 	overflow: hidden;
 	position: relative;
 	white-space: nowrap;
@@ -15,7 +15,7 @@ h2{ font-size:24px;}
 	letter-spacing: 2px;
 }
 
-/*#levels:before{
+#levels:before{
 	content:"";
 	background:#00BB96;
 	height:25px;
