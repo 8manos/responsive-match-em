@@ -234,7 +234,7 @@ function newGame(level)
 
 function deleteCards()
 {
-	$('#cards, div').css('background', '');
+	$('#cards, .card').css('background', '');
 	$('article:not(#0)').remove();
 	$('#0').removeClass('done used hold');
 }
@@ -256,7 +256,7 @@ function timer()
 
 function resetBoard()
 {
-	$('#cards, div').css('background', '');
+	$('#cards, .card').css('background', '');
 	$('article').removeClass('done used hold');
 	$('.card').width(cardwidth).height(cardheight).fadeIn();
 
@@ -325,7 +325,7 @@ function cardsMatch($used_cards, pic_id)
 function checkFinish()
 {
 	if (done.length == entries){
-		$('div').fadeOut();
+		$('.card').fadeOut();
 		$('#win').fadeIn();
 
 		if (best[level-1] == 0 || best[level-1] >= seconds){
