@@ -203,6 +203,15 @@ function setUp()
 		level = $(this).children('option:selected').index()+1;
 		newGame(level);
 	});
+
+	$('#button-repeat').click(function(){
+		$('#win').fadeOut();
+	});
+	$('#button-next').click(function(){
+		level = level+1;
+		newGame(level);
+		$('#win').fadeOut();
+	});
 }
 
 function finishResize()
@@ -222,14 +231,6 @@ function newGame(level)
 
 	resetStart();
 	setBest();
-
-	if (rows != 'auto'){
-		//cambiamos el tamaño de la ventana si se deja
-		var new_width = (max_width > max_height)? 105*(rows+1) : 105*rows;
-		var new_height = (max_width > max_height)? 140*rows : 140*(rows+1);
-		var toolbar = window.outerHeight + 16 - window.innerHeight;
-		window.resizeTo(new_width+24, new_height+toolbar);
-	}
 }
 
 function deleteCards()
