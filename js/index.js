@@ -23,6 +23,8 @@ $(function(){
 
 	fixLayout();
 
+	setAvailLevels();
+
 	setUp();
 });
 
@@ -55,7 +57,7 @@ function getSpace()
 
 	space = Math.min(max, min);
 
-	console.log('space: ', space);
+	console.log('space', space);
 }
 
 function setSelectedLevel(level)
@@ -159,6 +161,34 @@ function fixLayout()
 	cardheight = multip*24;
 
 	$('.card').width(cardwidth).height(cardheight);
+}
+
+function setAvailLevels()
+{
+	//las cartas mínimo se muestran a la mitad de su tamaño (85*120px)
+	//ademas debe haber al menos 10px de separación
+	var min_card_height = 120+10;
+	var min_card_width = 85+10;
+
+	var max_rows = Math.floor(height / min_card_height);
+	var max_cols = Math.floor(width / min_card_width);
+
+	for (i=0; i<levels.length; i++) {
+		if (levels[i].rows <= max_rows && levels[i].cols <= max_cols) {
+			console.log(' level '+(i+1), 'ok');
+		}else{
+			disableLevels(i);
+			break;
+		}
+	}
+}
+
+function disableLevels(max_level) {
+	//por lo menos se deja el primer nivel
+	max_level = Math.max(max_level, 1);
+
+	levels = levels.slice(0, max_level);
+	$('#levels option').slice(max_level).remove();
 }
 
 function setCardsArray()
