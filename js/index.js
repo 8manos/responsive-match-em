@@ -333,8 +333,11 @@ function checkFinish()
 			best[level-1] = seconds-1;
 			$('#best span').remove();
 			$('#time span').clone().appendTo($('#best'));
-			$('#best').slideDown();
+			//$('#best').slideDown();
+			$('#record-time span').html($('#best span').clone());
 		}
+
+		$('#next-level').html(level+1);
 
 		resetStart();
 		enableNext();
