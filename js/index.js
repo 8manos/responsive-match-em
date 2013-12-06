@@ -5,15 +5,16 @@ var pics = [];
 var cards = [];
 var done = [];
 var levels = [
-	{total: 4, rows: 1, cols: 4},
+	{total: 4, rows: 1, cols: 4, rows_sq:2, cols_sq:2},
 	{total: 6, rows: 2, cols: 3},
 	{total: 8, rows: 2, cols: 4},
-	{total: 12, rows: 3, cols: 4},
-	{total: 16, rows: 2, cols: 8},
+	{total: 12, rows: 2, cols: 6, rows_sq:3, cols_sq:4},
+	{total: 16, rows: 2, cols: 8, rows_sq:4, cols_sq:4},
 	{total: 20, rows: 4, cols: 5},
-	{total: 24, rows: 4, cols: 6},
+	{total: 24, rows: 3, cols: 8, rows_sq:4, cols_sq:6},
 	{total: 32, rows: 4, cols: 8}
 ];
+var aspect_ratio_break = 1.6;
 
 $(function(){
 	getElNum();
@@ -147,8 +148,20 @@ function getPics()
 function fixLayout()
 {
 	$('#cards').height(height).width(width);
-	var rows = levels[level-1].rows;
-	var cols = levels[level-1].cols;
+
+	//dependiendo del aspect ratio se escoge entre dos layouts
+	//solo para algunos niveles
+	//cuando la pantalla no es muy ancha, se pone un layout mas cuadrado
+	var aspect_ratio = width / height;
+	console.log('aspect_ratio', aspect_ratio);
+
+	if (aspect_ratio < aspect_ratio_break && levels[level-1].rows_sq) {
+		var rows = levels[level-1].rows_sq;
+		var cols = levels[level-1].cols_sq;
+	} else {
+		var rows = levels[level-1].rows;
+		var cols = levels[level-1].cols;
+	}
 
 	$('article').width(100/cols+'%').height(100/rows+'%');
 
@@ -174,7 +187,7 @@ function setAvailLevels()
 	var max_cols = Math.floor(width / min_card_width);
 
 	for (i=0; i<levels.length; i++) {
-		if (levels[i].rows <= max_rows && levels[i].cols <= max_cols) {
+		if ( (levels[i].rows <= max_rows && levels[i].cols <= max_cols) || (levels[i].rows_sq <= max_rows && levels[i].cols_sq <= max_cols) ) {
 			console.log(' level '+(i+1), 'ok');
 		}else{
 			disableLevels(i);
