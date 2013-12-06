@@ -204,13 +204,18 @@ function setUp()
 		newGame(level);
 	});
 
-	$('#button-repeat').click(function(){
-		$('#win').fadeOut();
+	$('.button-repeat').live('click', function(){
+		$('#win, #win-game').fadeOut();
 	});
-	$('#button-next').click(function(){
+	$('#button-next').live('click', function(){
 		level = level+1;
 		newGame(level);
-		$('#win').fadeOut();
+		$('#win, #win-game').fadeOut();
+	});
+	$('.button-play-level').live('click', function(){
+		level = parseInt($(this).attr('data-goto'));
+		newGame(level);
+		$('#win, #win-game').fadeOut();
 	});
 }
 
@@ -326,21 +331,40 @@ function cardsMatch($used_cards, pic_id)
 function checkFinish()
 {
 	if (done.length == entries){
-		$('.card').fadeOut();
-		$('#win').fadeIn();
 
 		if (best[level-1] == 0 || best[level-1] >= seconds){
 			best[level-1] = seconds-1;
 			$('#best span').remove();
 			$('#time span').clone().appendTo($('#best'));
-			//$('#best').slideDown();
 			$('#record-time span').html($('#best span').clone());
 		}
 
-		$('#next-level').html(level+1);
+		showWinOverlay();
 
 		resetStart();
 		enableNext();
+	}
+}
+
+function showWinOverlay()
+{
+	$('.card').fadeOut();
+
+	$('#next-level').html(level+1);
+
+	//si termino todo
+	if (level == levels.length) {
+		$('#record-levels').empty();
+
+		for (i=1; i<=levels.length; i++){
+			var minutes_seconds = formatBest(best[i-1]);
+			var record_item = $('<li><h4>Nivel '+i+'</h4><h4 class="record-time">'+minutes_seconds+' minutos</h4><h2 class="button-txt button-play-level" data-goto="'+i+'">Supera tu tiempo</h2></li>');
+			record_item.appendTo($('#record-levels'));
+		}
+
+		$('#win-game').fadeIn();
+	} else {
+		$('#win').fadeIn();
 	}
 }
 
@@ -365,14 +389,19 @@ function setBest()
 	if (level_best == 0){
 		$('#best span').text('');
 	}else{
-		var minutes = Math.floor(level_best/60);
-		var secs = level_best%60;
-
-		minutes = ( minutes < 10 ? "0" : "" ) + minutes;
-		secs = ( secs < 10 ? "0" : "" ) + secs;
-
-		$('#best span').text(minutes+':'+secs);
+		var minutes_seconds = formatBest(level_best);
+		$('#best span').text(minutes_seconds);
 	}
+}
+
+function formatBest(total_seconds){
+	var minutes = Math.floor(total_seconds/60);
+	var secs = total_seconds%60;
+
+	minutes = ( minutes < 10 ? "0" : "" ) + minutes;
+	secs = ( secs < 10 ? "0" : "" ) + secs;
+
+	return (minutes+':'+secs);
 }
 
 function unflip($cards)
