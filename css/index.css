@@ -135,9 +135,16 @@ div{
 	color: #FFF;
 	display: inline-block;
 	margin: 10px 10px 20px 10px !important;
-	padding: 0.4em 1em !important;
+	padding: 4px 20px !important;
 	text-align: center;
 	vertical-align: middle;
+}
+
+.button-txt:hover{
+	background-color:#00445C;
+	background-image:-webkit-linear-gradient(top, #00445C, #00D9A1;
+	background-image:-moz-linear-gradient(top, #00445C, #00D9A1);
+	background-image:-ms-linear-gradient(top, #00445C, #00D9A1;
 }
 
 /*@media screen and (-webkit-min-device-pixel-ratio:0){
