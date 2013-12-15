@@ -1,9 +1,9 @@
 html, body{margin:0; height:100%; color: #00535E;}
 body{background:url(../img/img_fondo.png)#fff8f0; background-repeat: no-repeat;  font:16px sovba-1,sovba-2,sans-serif;}
 
-h1, h2{margin:0; padding:12px 0; line-height: 40px; }
-h1{font-size:29px; /*text-shadow:0.5px 0.5px 0.5px #000014;*/}
-h2{ font-size:24px;}
+h1, h2{margin:0; padding:12px 0;}
+h1{font-size:29px; line-height: 60px; /*text-shadow:0.5px 0.5px 0.5px #000014;*/}
+h2{ font-size:24px; line-height: 40px;}
 
 /*#levels{
 	overflow: hidden;
