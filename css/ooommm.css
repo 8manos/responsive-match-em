@@ -2,40 +2,6 @@
 /*
 	Fuentes
 */
-@font-face {
-    font-family: 'airstream_itcregular';
-    src: url('../fuentes/airstreamitc-webfont.eot');
-    src: url('../fuentes/airstreamitc-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fuentes/airstreamitc-webfont.woff') format('woff'),
-         url('../fuentes/airstreamitc-webfont.ttf') format('truetype'),
-         url('../fuentes/airstreamitc-webfont.svg#airstream_itcregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'skiaregular';
-    src: url('../fuentes/skia-webfont.eot');
-    src: url('../fuentes/skia-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fuentes/skia-webfont.woff') format('woff'),
-         url('../fuentes/skia-webfont.ttf') format('truetype'),
-         url('../fuentes/skia-webfont.svg#skiaregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'houseregular';
-    src: url('../fuentes/thekingsofthehouse-regular-webfont.eot');
-    src: url('../fuentes/thekingsofthehouse-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fuentes/thekingsofthehouse-regular-webfont.woff') format('woff'),
-         url('../fuentes/thekingsofthehouse-regular-webfont.ttf') format('truetype'),
-         url('../fuentes/thekingsofthehouse-regular-webfont.svg#the_kings_of_the_houseregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
 
 @font-face{
     font-family:"VAG-Thin";
@@ -70,13 +36,13 @@ body{
     color: #00535E;
     padding: 0 1em;
     background-attachment: fixed;
-	background-image: url(../img/img_fondo.png);
-	background-position: left top;
+	background-image: url(../img/fondo-memoria.jpg);
+	background-position: center top;
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
-    font-family:"VAG-Light";
+    font-family:"VAG-Thin";
 }
 
 div {
@@ -121,6 +87,7 @@ div {
 
 header{
     padding: 1em 0 0;
+    margin-bottom: -1em;
     overflow: hidden;
     width: 100%;
 }
@@ -132,7 +99,7 @@ header h1{
 }
 header h2{
     display: block;
-    padding: 0;
+    padding-bottom: 0;
     text-shadow: 0 1px 0 #FFF;
 }
 
@@ -156,7 +123,7 @@ h4{
 }
 
 select{
-	font-family: 'houseregular';
+	font-family: "VAG-Thin";
 	font-size: 24px;
     color: #FFF !important;
     background: transparent;
@@ -175,11 +142,11 @@ select:before {
     color: red;s
 }
 
-#logo{
-    display: inline-block;
-    vertical-align: middle;
-    float: left;
-    margin-right: 1em;
+
+#best ,
+#time{
+    padding-left: 1em !important;
+    border-left: 1px solid #B1C9C4;
 }
 
 #game-area{
@@ -188,31 +155,47 @@ select:before {
     border-radius: 8px;
     box-shadow: 0 0 6px rgba(0,0,0,.6);
     margin: 1em 0;
-    padding: 1em 2em;
     overflow: hidden;
 }
 
 #levels {
     background-color: #00535E;
-    border-radius: 8px;
     color: white;
     letter-spacing: 2px;
-    overflow: hidden;
-    padding: 0.2em 1em !important;
+    margin-right: 2em !important;
+    overflow: visible;
+    padding: 0.6em 1em !important;
     position: relative;
     vertical-align: middle;
     white-space: nowrap;
 }
 
-#levels:before{
-	background: transparent;
+#levels:after{
+	border: 38px solid #00535E;
+    border-bottom-color: transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    content: " ";
+    display: block;
+    height: 0;
+    position: absolute;
+    right: -76px;
+    top: 0;
+    width: 0;
 }
 
+#logo{
+    display: inline-block;
+    vertical-align: middle;
+    float: left;
+    margin-right: 1em;
+}
 
 #play{
+    background-color: rgba(0,83,94,.6);
+    color: #FFF;
     display: block;
     overflow: hidden;
-    padding-left: 10%;
 }
 
 #play h2 {
@@ -228,8 +211,9 @@ select:before {
     background-image: none;
     border: none;
     box-shadow: none;
+    color: #FFF;
     display: block;
-    font-family: 'houseregular';
+    font-family:"VAG-Light";
     font-size: 1em;
     line-height: 57px;
     text-align: left;
@@ -265,24 +249,15 @@ select:before {
 
 #win ,
 #win-game {
-    /*background-color: transparent;
-    background-image: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    eft:0;
-    position:fixed;
-    text-shadow: 0 0 6px #000;
-    top:0%;
-    width: 100%;*/
     background: rgba(255,255,255,.6);
     border-radius: 8px;
     box-shadow: 0 0 6px rgba(0,0,0,.6);
     color: #005151;
     display: none;
-    font-family: 'airstream_itcregular';
     font-size: 4em;
-    margin: 10px 0;
+    margin: 0.3em 0;
     padding: 20px;
+    position: relative;
     text-align: center;
     overflow: hidden;
 }
@@ -297,17 +272,23 @@ select:before {
 
 #win h4 ,
 #win-game h4{
-    font-family: 'houseregular';
     font-size: 0.7em;
 }
 
 #win #record-level{
     display: block;
-    margin-top: 1em;
+    margin-top: 0.3em;
 }
 
 #win .button-txt{
     border-radius: 1em;
+}
+
+#win ul li .button-txt ,
+#win-game ul li .button-txt{
+    border-radius: 2em;
+    font-size: 0.3em;
+    padding: 0 10px;
 }
 
 #win-game ul{
@@ -323,11 +304,6 @@ select:before {
     font-size: 0.4em;
     margin: 10px;
     vertical-align: middle;
-}
-
-#win-game ul li .button-txt{
-    border-radius: 2em;
-    font-size: 0.3em;
 }
 
 .done {

@@ -5,42 +5,8 @@ h1, h2{margin:0; padding:12px 0;}
 h1{font-size:29px; line-height: 60px; /*text-shadow:0.5px 0.5px 0.5px #000014;*/}
 h2{ font-size:24px; line-height: 40px;}
 
-/*#levels{
-	overflow: hidden;
-	position: relative;
-	white-space: nowrap;
-	margin: 0px 0px 0px 90px;
-	font-family: 'airstream_itcregular';
-	color: #00614E;
-	letter-spacing: 2px;
-}
-
-#levels:before{
-	content:"";
-	background:#00BB96;
-	height:25px;
-	width:77px;
-	position:absolute;
-	left:73px;
-	top:21px;
-	z-index:-2;
-}
-
-#levels:after{
-	content:"";
-	border-color:#00362B #004D3D;
-	border-style:solid;
-	border-width:10px 8px 0;
-	height:0;
-	width:0;
-	position:absolute;
-	left:130px;
-	top:28px;
-	z-index:-1;
-}*/
 
 select{
-	/*font:bold 18px sovba-1,sovba-2,sans-serif;*/
 	background:#002921;
 	border:none; -webkit-appearance:none;
 	color:#00BB96;
