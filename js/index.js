@@ -248,6 +248,7 @@ function setUp()
 	});
 
 	$('.button-repeat').live('click', function(){
+		resetBoard();
 		$('#win, #win-game').fadeOut();
 	});
 	$('#button-next').live('click', function(){
@@ -276,6 +277,8 @@ function newGame(level)
 	getPics();
 
 	fixLayout();
+
+	resetBoard();
 
 	resetStart();
 	setBest();
@@ -417,8 +420,6 @@ function resetStart()
 	clearTimeout(t);
 
 	$('#start').html('<button>Iniciar</button>');
-
-	$("article:not(.done, .used)").die('click', clickCard);
 }
 
 function enableNext()
