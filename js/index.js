@@ -149,6 +149,9 @@ function fixLayout()
 {
 	$('#cards').height(height).width(width);
 
+	var win_height = height + $('#play').outerHeight(true) - parseInt($('#win').css('padding-top')) - parseInt($('#win').css('padding-bottom'));
+	$('#win, #win-game').height(win_height);
+
 	//dependiendo del aspect ratio se escoge entre dos layouts
 	//solo para algunos niveles
 	//cuando la pantalla no es muy ancha, se pone un layout mas cuadrado
@@ -248,18 +251,24 @@ function setUp()
 	});
 
 	$('.button-repeat').live('click', function(){
-		resetBoard();
-		$('#win, #win-game').fadeOut();
+		$('#win, #win-game').filter(":visible").fadeOut(function(){//.button-repeat sale en @win y @win-game
+			$('#play, #cards').fadeIn();
+			resetBoard();
+		});
 	});
 	$('#button-next').live('click', function(){
 		level = level+1;
-		newGame(level);
-		$('#win, #win-game').fadeOut();
+		$('#win').fadeOut(function(){
+			$('#play, #cards').fadeIn();
+			newGame(level);
+		});
 	});
 	$('.button-play-level').live('click', function(){
 		level = parseInt($(this).attr('data-goto'));
-		newGame(level);
-		$('#win, #win-game').fadeOut();
+		$('#win-game').fadeOut(function(){
+			$('#play, #cards').fadeIn();
+			newGame(level);
+		});
 	});
 }
 
@@ -408,9 +417,14 @@ function showWinOverlay()
 			record_item.appendTo($('#record-levels'));
 		}
 
-		$('#win-game').fadeIn();
+
+		$('#play, #cards').fadeOut(function(){
+			$('#win-game').fadeIn();
+		});
 	} else {
-		$('#win').fadeIn();
+		$('#play, #cards').fadeOut(function(){
+			$('#win').fadeIn();
+		});
 	}
 }
 
