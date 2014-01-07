@@ -191,7 +191,9 @@ function setAvailLevels()
 
 	for (i=0; i<levels.length; i++) {
 		if ( (levels[i].rows <= max_rows && levels[i].cols <= max_cols) || (levels[i].rows_sq <= max_rows && levels[i].cols_sq <= max_cols) ) {
-			console.log(' level '+(i+1), 'ok');
+			console.log('level '+(i+1), 'ok');
+		}else if (i < level){
+			console.log('level '+(i+1), 'not ok, but keep enabled. Playing level '+level);
 		}else{
 			disableLevels(i);
 			break;
@@ -242,7 +244,7 @@ function setUp()
 
 	$(window).resize(function(e) {
 		clearTimeout(resizeTimer);
-		resizeTimer = setTimeout(finishResize, 999);
+		resizeTimer = setTimeout(finishResize, 250);
 	});
 
 	$('#levels select').live('change', function(){
@@ -275,6 +277,8 @@ function setUp()
 function finishResize()
 {
 	getSpace();
+	fixLayout();
+	setAvailLevels();
 };
 
 function newGame(level)
