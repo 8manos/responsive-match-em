@@ -346,4 +346,35 @@ select:before {
     #start button:before {
         margin-right: 10px;
     }
+
+    #win, #win-game {
+        font-size: 2em;
+    }
+    #win ul li .button-txt ,
+    #win-game ul li .button-txt{
+        font-size: 0.6em;
+    }
+    #win-game ul li h4{
+        font-size: 0.8em;
+    }
+}
+
+@media (max-height:480px) and (min-width:768px ) {
+    #play {
+        float: left;
+    }
+    #play h2 {
+        border: 0;
+        display: block;
+        margin: 1em;
+    }
+    #play h2#levels {
+        margin: 0 0 1em;
+    }
+    #start button {
+        width: 160px;
+    }
+    #cards {
+        float: left;
+    }
 }

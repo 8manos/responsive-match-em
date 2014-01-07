@@ -44,7 +44,16 @@ function getElNum()
 function getSpace()
 {
 	width = $('body').width();
-	height = $('body').height() - $('header').outerHeight() - $('#play').outerHeight(true);
+	height = $('body').height() - $('header').outerHeight();
+
+	var floated_controls = ($('#play').css('float') == 'left');
+
+	if (floated_controls) {
+		width = width - $('#play').outerWidth(true);
+	} else {
+		$('#play').height('auto');
+		height = height - $('#play').outerHeight(true);
+	}
 
 	//game area top+bottom padding+margin
 	var game_area_vspace = parseInt($('#game-area').css('padding-top')) + parseInt($('#game-area').css('padding-bottom')) + parseInt($('#game-area').css('margin-top')) + parseInt($('#game-area').css('margin-bottom'));
@@ -149,7 +158,17 @@ function fixLayout()
 {
 	$('#cards').height(height).width(width);
 
-	var win_height = height + $('#play').outerHeight(true) - parseInt($('#win').css('padding-top')) - parseInt($('#win').css('padding-bottom'));
+	var win_height = height - parseInt($('#win').css('padding-top')) - parseInt($('#win').css('padding-bottom'));
+
+	var floated_controls = ($('#play').css('float') == 'left');
+
+	if (floated_controls) {
+		$('#play').height(height);
+	} else {
+		$('#play').height('auto');
+		win_height = win_height + $('#play').outerHeight(true);
+	}
+
 	$('#win, #win-game').height(win_height);
 
 	//dependiendo del aspect ratio se escoge entre dos layouts
